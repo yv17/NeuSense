@@ -1,0 +1,58 @@
+html {
+    background: url('../img/HomeBackground.png') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container{
+    position: relative;
+    top: 30px;
+}
+
+img{
+    opacity: 0.7;
+    display: block;
+    margin-left: 200px;
+    margin-right: 0 auto;
+    margin-bottom: 0 auto;
+    margin-top: 0 auto;
+}
+
+h1{
+    position: absolute;
+    font-family: Helvetica, sans-serif;
+    font-size: 5vw;
+    font-weight: lighter; 
+    color:rgb(242,242,242);
+    left: 180px;
+    bottom: 200px;
+}
+
+h2{ 
+    position: absolute;
+    font-family: Helvetica, sans-serif;
+    font-size: 2.7vw;
+    font-weight: lighter; 
+    color:rgb(242,242,242);
+    left: 180px;
+    bottom: 150px;
+}
+
+.button{
+    position: absolute;
+    display: inline-block;  
+    font-family: Helvetica, sans-serif;
+    font-size: 1.8vw;
+    font-weight: 200;
+    text-align: center;
+    text-decoration: none;
+    background-color:none;
+    border: 1px solid ;
+    border-color:  rgb(35,213,179);
+    border-radius: 12px;
+    color:rgb(242,242,242);
+    padding: 15px 32px;
+    left: 180px;
+    bottom: 75px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/illusions_des.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="poll.js"></script>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="overview_page.html">HOME</a>
+        <div class="dropdown">
+            <button class="dropbtn">LIST<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="Ascending_pitch.html">Ascending Shepard's Tone</a>
+                <a href="Scale_illusion.html">Scale Illusion</a>
+            </div>
+        </div>
+    </div>
+    <h1>Ascending Shepard's Tone</h1>
+    <h3>Illusion description</h3>
+    <hr>
+    <div class="gridcontainer">
+        <div class="textbox">
+            <p>
+                    In this illusion, you will hear a series of note constantly rising in pitch. <br>
+
+                    How? What you hear is impossible, in reality the pitches do not infinitely increase in pitch. 
+                    One way to create a Shepard scale is by layering three sequences of tones; 
+                    the sequences start from the same note and rise in pitch but they differ by one octave. <br>
+                    
+                    Insert a picture/diagram illustrating the above <br>
+                    
+                    The higher octave sequence fades from 100% volume to 0%. 
+                    The lower octave rises from 0% to 100% volume and the middle sequence is constant at 100% volume. <br>
+                    
+                    You always hear two sequences with a pitch difference. 
+                    Your brain uses one as a reference and, from the other, infers that the pitch is rising. 
+                    The fading volumes means you do not register the sequences beginning or ending. 
+                    Your brain links tones on the basis of proximity and believes there is a forever ascending scale. <br>
+                    
+                    Shepard scales can be found in music and a variety of sound effects. 
+                    It is used for the Batpod in the Dark Knight as well as to create extreme tension in the film Dunkirk. 
+                    Other notable examples can be found in the stairs in Super Mario and in Pink Floyd's song Echoes.   
+            </p>
+        </div>
+
+        <div id="poll">
+                <p>Does the illusion work?<p>
+                <form>
+                Yes:
+                <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+                <br>No:
+                <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+                </form>
+        </div>
+    </div>
+
+    <audio controls>
+        <source src="asc_tone.mp4" type="audio/mpeg">
+    </audio>
+     
+</body>
+
+</html>
