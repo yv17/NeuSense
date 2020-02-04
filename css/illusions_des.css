@@ -40,10 +40,11 @@ body {
     margin: 0;
 }
 
-.navbar a:hover,
+.navbar .navbarbtn:hover,
 .dropdown:hover .dropbtn {
-    background-color: rgb(35, 213, 179);
-    color: black;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: rgb(35, 213, 179);
 }
 
 .dropdown-content {
@@ -128,6 +129,13 @@ hr {
     margin-left: 70px;
     grid-column-start: 2;
     grid-column-end: 2; 
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 audio{
