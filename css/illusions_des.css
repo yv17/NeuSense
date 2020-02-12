@@ -131,6 +131,13 @@ hr {
     grid-column-end: 2; 
 }
 
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 audio{
     display: inline;
     margin-left: 50px;

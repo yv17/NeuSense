@@ -13,7 +13,8 @@ body {
 .slideshow-container {
   max-width: device-width;
   position: relative;
-  margin: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* Hide the images by default */
@@ -299,7 +300,7 @@ hr{
     grid-row-end:1;
 }
 
-.tch{
+.tri{
     display: flex;
     /*border: 1px solid rgb(242,242,242);*/
     padding-top: 15px;
