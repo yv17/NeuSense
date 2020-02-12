@@ -1,0 +1,60 @@
+html {
+    background: url('../img/HomeBackground.png') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.notation{
+    font-size: 1.4vw;
+    font-family: 'Karla', sans-serif;
+    color:rgb(166, 175, 187);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.radio-toolbar{
+    color: rgb(242,242,242);
+    font-family: 'Karla', sans-serif;
+    font-weight: lighter; 
+    font-size: 1.6vw;
+}
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #37404A;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    border: 1px solid rgb(242,242,242);
+    border-radius: 4px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label{
+    background-color: rgb(82, 94, 109);
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 1px dashed rgb(242,242,242);
+}
+
+.radio-toolbar label:hover {
+    background-color: rgb(82, 94, 109);
+  }
+
+  button{
+    background-color: #37404A;
+    color: rgb(242,242,242);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+  }
