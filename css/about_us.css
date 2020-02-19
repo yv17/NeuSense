@@ -120,10 +120,23 @@ hr {
 }
 
 .tobias_pic{
+    margin-left: 50px;
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start:1;
     grid-row-end:1;
+    align-content: center;
+    text-align: center;
+}
+
+.tobias_text{
+    margin-top: 30px;
+    grid-column-start:1;
+    grid-column-end: 1;
+    grid-row-start:2;
+    grid-row-end:2;
+    align-content: center;
+    text-align: center;
 }
 
 .Voon_pic{
