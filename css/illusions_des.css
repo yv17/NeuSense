@@ -117,6 +117,7 @@ hr {
     font-family: Helvetica, sans-serif;
     font-weight: lighter; 
     font-size: 1.6vw;
+    line-height: 1.5;
     grid-column-start: 1;
     grid-column-end: 1;
 }
@@ -140,6 +141,5 @@ img{
 
 audio{
     display: inline;
-    margin-left: 50px;
     /*margin-top: 10px;*/
 }
