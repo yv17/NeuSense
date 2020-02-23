@@ -35,6 +35,24 @@
                 <source src="sound_files/tritone.mp3" type="audio/mpeg">
             </audio>     
         </div>
+
+        <div id="tp_poll">
+            <form action="tp.php" method="POST">
+                <p>Tone 1:</p>
+                <input type="radio" name="tp1" value="0" required> Ascending<br>
+                <input type="radio" name="tp1" value="1"> Descending<br>
+
+            <p>Tone 2:</p>
+            <input type="radio" name="tp2" value="0" required> Ascending<br>
+            <input type="radio" name="tp2" value="1"> Descending<br>
+
+            <p>Tone 3:</p>
+            <input type="radio" name="tp3" value="0" required> Ascending<br>
+            <input type="radio" name="tp3" value="1"> Descending<br>
+            <input type="submit" value="Submit">
+
+            </form>
+        </div>
     </div>
     
 </body>
