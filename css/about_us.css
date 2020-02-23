@@ -7,10 +7,6 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-    background: url('../img/home_image2.png') no-repeat center center fixed;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .navbar {
