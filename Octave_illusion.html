@@ -21,6 +21,8 @@
                 <a href="Scale_illusion.html">Mysterious Melody</a>
                 <a href="Tritone_paradox.html">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
 
             </div>
         </div>
@@ -35,7 +37,6 @@
             <p>
                 <b>What is it?</b>
                 <br>
-                <br>
                 In this illusion, you will hear a sequence of alternating tones in each ear. 
                 <br>
                 <br>
@@ -45,7 +46,6 @@
                 <br>
                 <br>
                 <b>How does it work? </b>
-                <br>
                 <br>
                 It is likely that what you heard is different from the actual sound pattern.
                 Most often, people hear a repeating high tone in one ear and a repeating low tone in the other. 
@@ -61,12 +61,10 @@
                 <br>
                 <b>Is this used anywhere?</b>
                 <br>
-                <br>
                 The octave illusion gave rise to further studies on the ‘what’ and ‘where’ pathways. Functional MRI studies have sought to determine the specific location of these pathways and subsequently, better understand neural sound processing. 
                 <br>
                 <br>
                 <b>What is in the detailed research? </b>
-                <br>
                 <br>
                 A 2018 study in Tokyo looked at identifying structures in the brain that are responsible for the illusory perception of the octave illusion. 
                 <br>
@@ -112,13 +110,18 @@
             </p>
         </div>
 
-        <div id="oi_poll">
-                <p>In which ear do you hear the high tones?<p>
+        <div class="poll">
+            <br>
+            <br>
                 <form action="oi.php" method="POST">
-                    <input type="radio" name="oi" value="0" required> Left ear<br>
-                    <input type="radio" name="oi" value="1"> Right ear<br>
-                    <input type="radio" name="oi" value="2"> Unclear<br>
-                    <input type="submit" value="Submit">
+                    <span>In which ear do you hear the high tones?</span>
+                    <input type="radio" name="oi" value="0" id="left" required>
+                    <label for="left">Left ear</label><br>
+                    <input type="radio" name="oi" value="1" id="right">
+                    <label for="right">Right ear</label><br>
+                    <input type="radio" name="oi" value="2" id="unclear">
+                    <label for="unclear">Unclear</label><br>
+                    <input class="submit" type="submit" value="Submit">
                 </form>
         </div>
 
