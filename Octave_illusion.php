@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+    session_start();
+    if($_SESSION['oiflag']==1){         //replace with if form is submitted
+        $left = $_SESSION['left'];
+        $right = $_SESSION['right'];
+        $unclear = $_SESSION['unclear'];
+    }
+?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
@@ -16,10 +25,10 @@
             </button>
             <div class="dropdown-content">
                 <a href="Ascending_pitch.html">Ascending Pitch</a>
-                <a href="Octave_illusion.html">Octave Illusion</a>
+                <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Scale_illusion.html">Mysterious Melody</a>
-                <a href="Tritone_paradox.html">Tritone Paradox</a>
+                <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
 
             </div>
@@ -113,13 +122,22 @@
         </div>
 
         <div id="oi_poll">
-                <p>In which ear do you hear the high tones?<p>
+                <p>In which ear do you hear the high tones?</p>
                 <form action="oi.php" method="POST">
                     <input type="radio" name="oi" value="0" required> Left ear<br>
                     <input type="radio" name="oi" value="1"> Right ear<br>
                     <input type="radio" name="oi" value="2"> Unclear<br>
                     <input type="submit" value="Submit">
                 </form>
+
+                <?php if($_SESSION['oiflag']==1){ ?>            <!--replace with if form is submitted-->
+                <p>
+                    Result: <br>
+                    <?php echo 'Left: ' . $left . '<br>'; ?>
+                    <?php echo 'Right: ' . $right . '<br>'; ?>
+                    <?php echo 'Unclear: ' . $unclear . '<br>'; ?>
+                </p>
+                <?php } ?>
         </div>
 
     </div>
