@@ -5,13 +5,6 @@ html {
     background-size: cover;
 }
 
-body{
-    background: url('../img/home_image2.png') no-repeat center center fixed;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .notation{
     font-size: 1.4vw;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -25,6 +18,7 @@ body{
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-size: 1.5vw;
     margin-left: 50px;
+    padding-top: 50px;
 }
 .radio-toolbar input[type="radio"] {
     opacity: 0;
@@ -67,7 +61,7 @@ span{
     border: 1px solid rgb(35,213,179);
     cursor:pointer;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    font-size:1.3vw;
+    font-size:1.1vw;
     letter-spacing: 0.5vw;
     font-weight: bold;
     line-height:45px;
