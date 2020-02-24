@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="radio-toolbar">
-            <form action="">
+            <form action="survey.php" method="POST">
                     <span>
                         Do you agree to take part in this survey sent to you by our team?
                     </span>
@@ -18,53 +18,52 @@
                     The data collected will be used for display of statistics of users' response to auditory illusions 
                     as part of Third Year Group Project in Imperial College London.
                     </div>
-                    <input type="radio" name="consent" value="Yes" id="consent1">
+                    <input type="radio" name="consent" value="1" id="consent1" required>
                     <label for="consent1">Yes</label><br>
-                    <input type="radio" name="consent" value="No" id="consent2">
+                    <input type="radio" name="consent" value="0" id="consent2">
                     <label for="consent2">No</label>
                     <br>
                     <br>
         
                     <span>What is your age?</span>
                     <br>
-                    <br>
-                    <input type="radio" name="age" value="0-18" id="age1">
+                    <input type="radio" name="age" value="0" id="age1" required>
                     <label for="age1">Under 18</label><br>
-                    <input type="radio" name="age" value="18-25" id="age2">
+                    <input type="radio" name="age" value="1" id="age2">
                     <label for="age2">18 - 25</label><br>
-                    <input type="radio" name="age" value="25-39" id="age3">
+                    <input type="radio" name="age" value="2" id="age3">
                     <label for="age3">25 - 39</label><br>
-                    <input type="radio" name="age" value="40-60" id="age4">
+                    <input type="radio" name="age" value="3" id="age4">
                     <label for="age4">40 - 60</label>
                     <br>
-                    <input type="radio" name="age" value="60-100" id="age5">
+                    <input type="radio" name="age" value="4" id="age5">
                     <label for="age5">Above 60</label>
                     <br>
                     <br>
         
                     <span>Are you</span>
                     <br>
-                    <br>
-                    <input type="radio" name="handedness" value="left-handed" id="left">
+                    <input type="radio" name="handedness" value="0" id="left" required>
                     <label for="left">Left-handed</label><br>
-                    <input type="radio" name="handedness" value="right-handed" id="right">
+                    <input type="radio" name="handedness" value="1" id="right">
                     <label for="right">Right-handed</label><br>
-                    <input type="radio" name="handedness" value="ambidextrous" id="both">
+                    <input type="radio" name="handedness" value="2" id="both">
                     <label for="both">Ambidextrous</label><br>
                     <br>
                     
                     <span>How would you describe your music training background?</span>
                     <br>
-                    <br>
-                    <input type="radio" name="training" value="notraining" id="no">
+                    <input type="radio" name="training" value="0" id="no" required>
                     <label for="no">No training</label><br>
-                    <input type="radio" name="training" value="sometraining" id="some">
+                    <input type="radio" name="training" value="1" id="some">
                     <label for="some">Some training</label><br>
-                    <input type="radio" name="training" value="formal" id="formal">
+                    <input type="radio" name="training" value="2" id="formal">
                     <label for="formal">Formal training</label><br>
                     <br>
                     <form>
-                        <button formaction="overview_page.html">Submit</button>
+                        <!--<button class="submit" formaction="overview_page.html">SUBMIT</button>-->
+                        <!--<button class="submit" formaction="survey.php">SUBMIT</button>-->
+                        <button class="submit">SUBMIT</button>
                     </form>  
                 </form>
     </div>

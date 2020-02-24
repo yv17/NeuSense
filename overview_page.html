@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+$var_value = $_SESSION['varname'];
+?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/overview_page.css">
@@ -29,98 +33,13 @@
     </div>
     <br>
     <br>
-    <br>
-
-    <!-- Sliding Banner -->
-    <div class="slideshow-container">
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade"> 
-            <div class="text"> 
-                <p>
-                    Auditory illusions, also known as auditory pareidolia, 
-                    occur when misperceiving real acoustic stimuli. 
-                    <br>
-                    This definition creates a distinction from auditory hallucinations, 
-                    which are perceived in the absence of a stimulus. 
-                    <br>
-                    Auditory illusions allow us to hear sounds which are not present in the stimulus, 
-                    <br>
-                    similar to how optical illusions allow us to see objects or shapes that are not present in an image. 
-                    <br>
-                    One such example is the Ascending Shepard Scale. 
-                    <br>
-                    Here, the listener hears a series of notes continuously rising in pitch.
-                    <br> 
-                    However, this should not be possible, as a tone cannot increase in pitch infinitely,
-                    <br> 
-                    and beyond the human hearing range, the listener should not be able to hear any sound.
-                </p>
-            </div>
-
-            <div class="slideImage">
-                
-           </div>
-                  
-        </div>
-                  
-        <div class="mySlides fade">
-            <div class="text">
-                <p>
-                    The Dark Knight
-                    <br>
-                    Dunkirk
-                    <br>
-                    Beethoven (Leonore Overture)
-                    <br>
-                    Tchaikovsky’s Passage
-                </p>   
-            </div>
-        </div>
-                  
-        <div class="mySlides fade">
-            <div class="text">
-                <p>
-                    DPOAEs are used to detect deafness in infants.
-                    <br>
-                    Binaural beats can affect a person’s sleep cycle, or even their behaviour
-                </p>
-            </div> 
-            
-            <div class="slideImage">
-                <!--<a class="typeform-share button" href="https://yiteng993390.typeform.com/to/j8LD4x" data-mode="popup" data-submit-close-delay="0" target="_blank">Start the Survey </a>
-                <script> (function() { var qs,js,q,s,d=document, 
-                gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, 
-                id="typef_orm_share", b="https://embed.typeform.com/"; 
-                if(!gi.call(d,id)){ js=ce.call(d,"script"); 
-                js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; 
-                q.parentNode.insertBefore(js,q) } })() 
-                </script>-->
-                <a class="typeform-share button" href="survey_form.html" onclick="window.location.href='survey_form.html'">Start the Survey</a>
-            </div>
-        </div>
-                  
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-                  
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-
     <section>
         <div class="gridcontainer">
             <div class="asc">
-                <!-- <img src="asc_icon.png" style="height:50px">
-                <p>Ascending Shepard's Tone</p> -->
                 <form>
                     <button formaction="Ascending_pitch.html" class="btn">
-                        <img src="img/asc_icon.png" style="height:65px">
-                        <p>Ascending Shepard's Tone</p>
+                        <img src="img/asc_icon.png" style="height:75px">
+                        <p>Shepard's Tone</p>
                     </button>
                 </form>  
             </div>
@@ -135,8 +54,6 @@
             </div>
 
             <div class="sca">
-                <!-- <img src="sca_icon.png" style="height:50px">
-                <p>Scale Illusion</p> -->
                 <form>
                     <button formaction="Scale_illusion.html" class="btn">
                         <img src="img/sca_icon.png" style="height:65px">
@@ -169,24 +86,27 @@
                 </form>    
             </div>
         
-            <div class="spe">
-                <img src="img/spe_icon.png" style="height:60px">
-                <p>Speech-to-Illusion</p>
+            <div class="dpoae">
+                <img src="img/dpoae_icon.png" style="height:60px">
+                <p>DPOAE</p>
             </div>
 
-            <div class="des">
-                <img src="img/des_icon.png" style="height:80px">
-                <p>Descending Glissando</p>
+            <div class="con">
+                <img src="img/con_icon.png" style="height:80px">
+                <p>Continuity Illusion</p>
             </div>
 
-            <div class="pha">
-                <img src="img/pha_icon.png" style="height:65px">
-                <p>Phantom Words</p>
+            <div class="seq">
+                <img src="img/timing_icon.png" style="height:65px">
+                <p>Timing and Sequence Illusion</p>
+            </div>
+
+            <div class="gal">
+                <img src="img/gallop_icon.png" style="height:65px">
+                <p>Galloping Rhythm</p>
             </div>
         </div>
     </section>
-    <script src="slide.js"></script>
-    <!--<script>currentSlide(1)</script>-->
 </body>
 
 </html>
