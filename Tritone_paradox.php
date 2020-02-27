@@ -65,15 +65,93 @@
             </form>
 
             <?php if($_SESSION['tpflag']==1){ ?>
-            <p>
-                Result: <br>
-                <?php echo 'ATP1: ' . $atp1 . '<br>'; ?>
-                <?php echo 'DTP1: ' . $dtp1 . '<br>'; ?>
-                <?php echo 'ATP2: ' . $atp2 . '<br>'; ?>
-                <?php echo 'DTP2: ' . $dtp2 . '<br>'; ?>
-                <?php echo 'ATP3: ' . $atp3 . '<br>'; ?>
-                <?php echo 'DTP3: ' . $dtp3 . '<br>'; ?>
-            </p>
+                <div id="piechart"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Results', 'Responses'],
+                        ['Ascending', <?php echo $atp1; ?>],
+                        ['Descending', <?php echo $dtp1; ?>]
+                        ]);
+
+                        var options = {
+                                'title': 'Results 1',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                        };
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                        chart.draw(data, options);
+                    }
+                </script>
+                <div id="piechart2"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Results', 'Responses'],
+                        ['Ascending', <?php echo $atp2; ?>],
+                        ['Descending', <?php echo $dtp2; ?>]
+                        ]);
+
+                        var options = {
+                                'title': 'Results 2',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                        };
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+                        chart.draw(data, options);
+                    }
+                </script>
+                <div id="piechart3"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Results', 'Responses'],
+                        ['Ascending', <?php echo $atp3; ?>],
+                        ['Descending', <?php echo $dtp3; ?>]
+                        ]);
+
+                        var options = {
+                                'title': 'Results 3',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                        };
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+                        chart.draw(data, options);
+                    }
+                </script>
             <?php } ?>
         </div>
     </div>

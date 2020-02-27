@@ -131,12 +131,36 @@
                 </form>
 
                 <?php if($_SESSION['oiflag']==1){ ?>            <!--replace with if form is submitted-->
-                <p>
-                    Result: <br>
-                    <?php echo 'Left: ' . $left . '<br>'; ?>
-                    <?php echo 'Right: ' . $right . '<br>'; ?>
-                    <?php echo 'Unclear: ' . $unclear . '<br>'; ?>
-                </p>
+                    <div id="piechart"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Results', 'Responses'],
+                            ['Left', <?php echo $left; ?>],
+                            ['Right', <?php echo $right; ?>],
+                            ['Unclear', <?php echo $unclear; ?>]
+                            ]);
+
+                            var options = {
+                                'title': 'Results',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345', '228CD5'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                            };
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                            chart.draw(data, options);
+                        }
+                    </script>
                 <?php } ?>
         </div>
 
