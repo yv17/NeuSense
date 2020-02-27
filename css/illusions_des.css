@@ -17,24 +17,25 @@ body {
 
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 1.25vw;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1.1vw 1.25vw;
     text-decoration: none;
 }
 
 .dropdown {
     float: left;
     overflow: hidden;
+
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 1.25vw;
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 1.1vw 1.25vw;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -51,15 +52,15 @@ body {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 12.5vw;
+    box-shadow: 0px 0.6vw 1.25vw 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
     float: none;
     color: black;
-    padding: 12px 16px;
+    padding: 0.94vw 1.25vw;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -79,8 +80,8 @@ h1 {
     font-size: 2.1vw;
     font-weight: lighter;     
     text-align: left;
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-top: 3.9vw;
+    margin-left: 3.9vw;
 }
 h3 {
     display: inline;
@@ -90,14 +91,14 @@ h3 {
     font-size: 1.6vw;
     text-align: left;
     /*margin-top: 30px;*/
-    margin-left: 50px;
+    margin-left: 3.9vw;
 }
 
 hr {
     height: 2px;
     background-color: rgb(35,213,179);
     width: 30%;
-    margin-left: 50px;
+    margin-left: 3.9vw;
     border-width: initial;
     border-style: none;
     border-color: initial;
@@ -106,31 +107,91 @@ hr {
 
 .gridcontainer{
     display: grid;
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 0.78vw;
+    margin-left: 3.9vw;
     grid-template-columns: 2.2fr 1fr;
     justify-content: center;
 }
+
 
 .textbox{
     color: rgb(242,242,242);
     font-family: Helvetica, sans-serif;
     font-weight: lighter; 
     font-size: 1.6vw;
-    line-height: 1.5;
+    line-height: 1.9vw;
     grid-column-start: 1;
     grid-column-end: 1;
 }
 
-#poll{
+.textbox b{
+    display: inline-block;
+    margin-bottom: 0.8vw;
+}
+
+.poll{
+    display: block;
     color: rgb(242,242,242);
-    font-family: Helvetica, sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: lighter; 
     font-size: 1.6vw;
-    margin-left: 70px;
+    margin-left: 3.9vw;
     grid-column-start: 2;
     grid-column-end: 2; 
 }
+
+.poll span{
+    display: inline-block;
+    margin-bottom: 0.7vw;
+}
+.poll input[type="radio"] {
+    position:fixed;
+    opacity: 0;
+    width: 0;
+}
+
+.poll label{
+    display: inline-block;
+    background-color: #37404A;
+    margin-bottom: 0.7vw;
+    margin-bottom: 0.7vw;
+    padding: 0.78vw 1.56vw;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 1.25vw;
+    border: 0.07vw solid rgb(242,242,242);
+    border-radius: 0.3vw;
+}
+
+.poll input[type="radio"]:checked + label{
+    background-color: rgb(82, 94, 109);
+    border: 0.07vw dashed rgb(35,213,179);
+}
+
+.poll input[type="radio"]:focus + label {
+    border: 0.07vw dashed rgb(35,213,179);
+}
+
+.poll label:hover {
+    background-color: rgb(82, 94, 109);
+  }
+
+.submit{ 
+    background-color: rgb(0,0,0,0);
+    color:rgb(35,213,179);
+    border: 0.07vw solid rgb(35,213,179);
+    cursor:pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size:1.1vw;
+    letter-spacing: 0.5vw;
+    font-weight: bold;
+    line-height:3.5vw;
+    text-align:center;
+    height:3.5vw;
+    padding-left: 1vw;
+    padding-right: 0.7vw;
+    border-radius:1.72vw;
+    margin-top:0.7vw;
+  }
 
 img{
   display: block;

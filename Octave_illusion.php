@@ -3,7 +3,7 @@
 
 <?php
     session_start();
-    if($_SESSION['oiflag']==1){         //replace with if form is submitted
+    if($_SESSION['oiflag']==1){
         $left = $_SESSION['left'];
         $right = $_SESSION['right'];
         $unclear = $_SESSION['unclear'];
@@ -130,7 +130,7 @@
                     <input type="submit" value="Submit">
                 </form>
 
-                <?php if($_SESSION['oiflag']==1){ ?>            <!--replace with if form is submitted-->
+                <?php if($_SESSION['oiflag']==1){ ?>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">

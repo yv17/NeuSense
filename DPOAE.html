@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/illusions_des.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbarbtn" href="overview_page.html">HOME</a>
+        <div class="dropdown">
+            <button class="dropbtn">LIST
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Octave_illusion.html">Octave Illusion</a>
+                <a href="Scale_illusion.html">Scale Illusion</a>
+                <a href="Scale_illusion.html">Mysterious Melody</a>
+                <a href="Tritone_paradox.html">Tritone Paradox</a>
+                <a href="Timbre_illusion.html">Timbre Illusion</a>
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+            </div>
+        </div>
+        <a class="navbarbtn" href="about_us.html">ABOUT US</a>
+    </nav>
+
+    <h1>DPOAE</h1>
+    <h3>Illusion description</h3>
+    <hr>
+    <div class="gridcontainer">
+        <div class="textbox">  
+            <p>
+                <b>What is this? </b>
+                <br>
+                Two tones are played. One remains constant and the other continually rises in pitch. 
+                You may hear a very faint mysterious tone that is lower than the sounds that are played and is in fact falling in pitch. 
+                <br>
+                <br>
+                <b>How does this happen?</b> 
+                <br>
+                The inner ear vibrates when sound waves travel through it. 
+                If there are two frequencies vibrating the inner ear, they interact and the inner ear produces distortion products; this is a result of its nonlinearity. 
+                Let’s say you have two tones that have frequencies f1 and f2. 
+                A simple distortion product to calculate is the cubic product (2f1 - f2). 
+                In the example, as f2 rises, this particular distortion product will actually fall in pitch. 
+                This is the tone that you might hear and is produced by your own ear! The phenomenon is best shown by the diagram below, produced in Matlab.
+                <br>
+                <br>
+                <img src="img/dp1.png">
+                <br>
+                <b>Is this used anywhere?</b>
+                <br>
+                Yes. It is used in healthcare to test the function of the inner ear. 
+                Clinicians play two tones and use a microphone to listen for the cubic distortion product (2f1 -f2) produced by the inner ear. 
+                It’s absence is a strong indication of inner ear impairment<sup>1</sup> . 
+                DPOAEs are also utilised in music and often referred to as combination tones or Tartini tones<sup>2</sup>. 
+                <br>
+                <br>
+                <b>What is in the detailed research?</b>  
+                <br>
+                This is a widely researched topic that along the way has illuminated some of the incredible intricacies and functionality of the ear. 
+                We will explore how nonlinearity of the ear, specifically the cochlea, is relevant to DPOAEs and hearing in general<sup>3</sup>. 
+                <br>
+                <br>
+                <img src="img/dp2.png">
+                <br>
+                <br>
+                The cochlea is essential to inner ear function and research has shown that it actively alters sound waves as they travel through the ear to later stimulate neuronal activity. 
+                These active processes can be split into four distinct actions;
+                <br>
+                <ul>
+                    <li>Amplification</li>
+                    <li>Frequency tuning</li>
+                    <li>Compressive nonlinearity</li>
+                    <li>Spontaneous otoacoustic emission</li>
+                </ul>
+                Amplification is considered the most important. 
+                It should be noted the process is coined active because ear components input their own internal energy. 
+                <br>
+                <br>
+                The motility and contraction of outer hair cells are key to amplify sounds. 
+                They rapidly contract causing downward movement of the tectorial membrane and upward movement of the basilar membrane. 
+                This process helps us to hear quieter sounds and improve frequency resolution. 
+                <br>
+                <br>
+                It is due to this nonlinearity and active processes that DPOAEs are produced. 
+                When they are not present it is a strong indicator the cochlea and outer hair cells are not functioning properly. 
+                <br>
+                <br>
+                Some of the research has determined the best conditions for DPOAEs and their clinical purposes. 
+                Currently, two high frequency tones are used measuring frequencies up to around 6kHz, and the ratio of the two tones (f1/f2) is kept around 1.22. 
+                They are played at amplitudes 55dB and 65dB SPL; these conditions are met to maximise the DPOAEs measured<sup>4</sup> . 
+                <br>
+                <br>
+                Despite this maximisation, there is a relatively high rate of false positive tests, particularly for newborn babies. 
+                It is thought that remaining amniotic fluid in the middle ear may be accountable. 
+                A recent study looked at measuring higher frequencies, up to 12kHz, as these are less affected by the amniotic fluid<sup>4</sup>.
+                They found that using additional frequencies up to 10kHz cut the false positive rate from 9% to 0.4%. 
+                The study had its limitation but it shows how valuable it is to improve this diagnostic test. 
+                <br>
+                <br>
+                <b>References</b>
+                <ol>
+                    <li>J Ramos et al, 2013, An Overview of OAEs and Normative Data for DPOAEs, The Hearing Review</li>
+                    <li>Britannica authors, 1998, Combination tones, Encyclopedia Britannica, https://www.britannica.com/science/tone-sound</li>
+                    <li>T Reichenbach and AJ Hudspeth, 2014, The physics of hearing: fluid mechanics and the active process of the inner ear, Reports on Progress in Physics</li>
+                    <li>OV Akinpelu, WRJ Funnell SJ Daniel, 2019, High-frequency otoacoustic emissions in universal newborn hearing screening, International Journal of Pediatric Otorhinolaryngology</li>
+                </ol>
+            </p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

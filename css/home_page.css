@@ -38,7 +38,7 @@ html{
   
   .onepage-pagination {
     position: absolute;
-    right: 10px;
+    right: 0.8vw;
     top: 35%;
     z-index: 5;
     list-style: none;
@@ -50,29 +50,29 @@ html{
     text-align: center;
   }
   .onepage-pagination li a{
-    padding: 10px;
-    width: 4px;
-    height: 4px;
+    padding: 0.8vw;
+    width: 0.3vw;
+    height: 0.3vw;
     display: block;
     
   }
   .onepage-pagination li a:before{
     content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 0.3vw;
+    height: 0.3vw;
     background: rgba(242,242,242,0.85);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-radius: 0.8vw;
+    -webkit-border-radius: 0.8vw;
+    -moz-border-radius: 0.8vw;
   }
   
   .onepage-pagination li a.active:before{
-    width: 10px;
-    height: 10px;
+    width: 0.8vw;
+    height: 0.8vw;
     background: rgb(35,213,179);
-    margin-top: -4px;
-    left: 9px;
+    margin-top: -0.3vw;
+    left: 0.7vw;
   }
   
   .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
@@ -172,17 +172,17 @@ html{
     text-decoration: none;
     background-color:none;
     color:rgb(35,213,179);
-    border: 1px solid rgb(35,213,179);
+    border: 0.07vw solid rgb(35,213,179);
     cursor:pointer;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-size:1vw;
     letter-spacing: 0.5vw;
     font-weight: bold;
-    line-height:45px;
+    line-height:3.5vw;
     text-align:center;
-    height:45px;
+    height:3.5vw;
     padding:0.6vw;
     padding-left: 1vw;
     padding-right: 0.7vw;
-    border-radius:22px;
+    border-radius:1.7vw;
   }
