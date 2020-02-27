@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+    session_start();
+    if($_SESSION['oiflag']==1){
+        $left = $_SESSION['left'];
+        $right = $_SESSION['right'];
+        $unclear = $_SESSION['unclear'];
+    }
+?>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
@@ -16,13 +25,11 @@
             </button>
             <div class="dropdown-content">
                 <a href="Ascending_pitch.html">Ascending Pitch</a>
-                <a href="Octave_illusion.html">Octave Illusion</a>
+                <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Scale_illusion.html">Mysterious Melody</a>
-                <a href="Tritone_paradox.html">Tritone Paradox</a>
+                <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
-                <a href="DPOAE.html">DPOAE</a>
-                <a href="Continuity_illusion.html">Continuity Illusion</a>
 
             </div>
         </div>
@@ -37,6 +44,7 @@
             <p>
                 <b>What is it?</b>
                 <br>
+                <br>
                 In this illusion, you will hear a sequence of alternating tones in each ear. 
                 <br>
                 <br>
@@ -46,6 +54,7 @@
                 <br>
                 <br>
                 <b>How does it work? </b>
+                <br>
                 <br>
                 It is likely that what you heard is different from the actual sound pattern.
                 Most often, people hear a repeating high tone in one ear and a repeating low tone in the other. 
@@ -61,10 +70,12 @@
                 <br>
                 <b>Is this used anywhere?</b>
                 <br>
+                <br>
                 The octave illusion gave rise to further studies on the ‘what’ and ‘where’ pathways. Functional MRI studies have sought to determine the specific location of these pathways and subsequently, better understand neural sound processing. 
                 <br>
                 <br>
                 <b>What is in the detailed research? </b>
+                <br>
                 <br>
                 A 2018 study in Tokyo looked at identifying structures in the brain that are responsible for the illusory perception of the octave illusion. 
                 <br>
@@ -110,19 +121,47 @@
             </p>
         </div>
 
-        <div class="poll">
-            <br>
-            <br>
+        <div id="oi_poll">
+                <p>In which ear do you hear the high tones?</p>
                 <form action="oi.php" method="POST">
-                    <span>In which ear do you hear the high tones?</span>
-                    <input type="radio" name="oi" value="0" id="left" required>
-                    <label for="left">Left ear</label><br>
-                    <input type="radio" name="oi" value="1" id="right">
-                    <label for="right">Right ear</label><br>
-                    <input type="radio" name="oi" value="2" id="unclear">
-                    <label for="unclear">Unclear</label><br>
-                    <input class="submit" type="submit" value="Submit">
+                    <input type="radio" name="oi" value="0" required> Left ear<br>
+                    <input type="radio" name="oi" value="1"> Right ear<br>
+                    <input type="radio" name="oi" value="2"> Unclear<br>
+                    <input type="submit" value="Submit">
                 </form>
+
+                <?php if($_SESSION['oiflag']==1){ ?>
+                    <div id="piechart"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Results', 'Responses'],
+                            ['Left', <?php echo $left; ?>],
+                            ['Right', <?php echo $right; ?>],
+                            ['Unclear', <?php echo $unclear; ?>]
+                            ]);
+
+                            var options = {
+                                'title': 'Results',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345', '228CD5'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                            };
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                            chart.draw(data, options);
+                        }
+                    </script>
+                <?php } ?>
         </div>
 
     </div>

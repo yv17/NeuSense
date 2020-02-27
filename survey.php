@@ -20,6 +20,8 @@
     }
 
     $_SESSION['id'] = $id;
+    $_SESSION['oiflag'] = 0;
+    $_SESSION['tpflag'] = 0;
 
     //Insert to other table
     $db = pg_connect("host=localhost port=5432 dbname=neusense user=neusenseuser password=password");
