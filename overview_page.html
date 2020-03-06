@@ -29,6 +29,7 @@ $var_value = $_SESSION['varname'];
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.html">Interleaved Melodies</a>
             </div>
         </div>
         <a class="navbarbtn" href="about_us.html">ABOUT US</a>
@@ -65,10 +66,13 @@ $var_value = $_SESSION['varname'];
             </div>
 
             <div class="mys">
-                <img src="img/mys_icon.png" style="height:5vw">
-                <p>Mysterious Melody</p>
+                <form>
+                    <button formaction="Mysterious_melody.html" class="btn">
+                        <img src="img/mys_icon.png" style="height:5vw">
+                        <p>Mysterious Melody</p>
+                    </button>
+                </form>
             </div>
-
 
             <div class="tri">
                 <form>
@@ -113,8 +117,21 @@ $var_value = $_SESSION['varname'];
             </div>
 
             <div class="gal">
-                <img src="img/gallop_icon.png" style="height:5vw">
-                <p>Galloping Rhythm</p>
+                <form>
+                    <button formaction="Galloping.html" class="btn">
+                        <img src="img/gallop_icon.png" style="height:5vw">
+                        <p>Galloping Rhythm</p>
+                    </button>
+                </form>
+            </div>
+
+            <div class="int">
+                <form>
+                    <button formaction="Interleaved_melodies.html" class="btn">
+                        <img src="img/tch_icon.png" style="height:5vw">
+                        <p>Interleaved Melodies</p>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
