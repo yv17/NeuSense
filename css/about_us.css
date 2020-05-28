@@ -172,6 +172,27 @@ hr {
     text-align: center;
 }
 
+.Josh_pic{
+    padding-top: 7vw;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Josh_text{
+    margin-top: 2.3vw;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
+
+
 .Sabrina_pic{
     grid-column-start:2;
     grid-column-end: 2;
