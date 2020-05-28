@@ -192,6 +192,45 @@ hr {
     text-align: center;
 }
 
+.Beth_pic{
+    padding-top: 7vw;
+    grid-column-start:3;
+    grid-column-end: 3;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Beth_text{
+    margin-top: 2.3vw;
+    grid-column-start:3;
+    grid-column-end: 3;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
+
+.Sam_pic{
+    padding-top: 7vw;
+    grid-column-start:4;
+    grid-column-end: 4;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Sam_text{
+    margin-top: 2.3vw;
+    grid-column-start:4;
+    grid-column-end:4;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
 
 .Sabrina_pic{
     grid-column-start:2;
