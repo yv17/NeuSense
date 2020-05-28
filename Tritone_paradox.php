@@ -33,6 +33,10 @@
                 <a href="Scale_illusion.html">Mysterious Melody</a>
                 <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.html">Interleaved Melodies</a>
+                <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
         </div>
         <a class="navbarbtn" href="about_us.html">ABOUT US</a>

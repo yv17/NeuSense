@@ -266,6 +266,21 @@ hr{
     grid-row-end:3;
 }
 
+.bin{
+    display: flex;
+    /*border: 1px solid rgb(242,242,242);*/ 
+    padding-top: 1.17vw;
+    padding-right: 0.8vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:rgb(242,242,242);
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start:3;
+    grid-row-end:3;
+}
+
 
 img{
     display: block;
