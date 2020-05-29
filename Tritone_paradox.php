@@ -10,6 +10,8 @@
         $dtp2 = $_SESSION['dtp2'];
         $atp3 = $_SESSION['atp3'];
         $dtp3 = $_SESSION['dtp3'];
+        $atp4 = $_SESSION['atp4'];
+        $dtp4 = $_SESSION['dtp4'];
     }
 ?>
 
@@ -17,7 +19,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -52,6 +53,8 @@
         <br>
         <br>
         This illusion is best heard in groups! (But don’t worry if you are on your own). You will hear two consecutive tones and you must decide whether you think they are ascending or descending in pitch. You might find that other people disagree with you… 
+        <br>
+        <br>
         <audio controls>
                 <source src="sound_files/tritone.mp3" type="audio/mpeg">
         </audio>     
@@ -85,25 +88,39 @@
             <li>Deutsch, D., 1992, Paradoxes of musical pitch, Scientific American</li>
             <li>Deutsch, D., Henthorn T. and Dolson, M., 2004, Speech patterns heard early in life influence later perception of the tritone paradox. Music Perception</li>
         </ol>
-        </div>
+    </div>
 
-        <div id="tp_poll">
+        <div class="poll">
             <form action="tp.php" method="POST">
-                <p>Tone 1:</p>
-                <input type="radio" name="tp1" value="0" required> Ascending<br>
-                <input type="radio" name="tp1" value="1"> Descending<br>
+                <span>Tone 1:</span><br>
+                <input type="radio" name="tp1" value="0" id="tp1a" required>
+                <label for="tp1a">Ascending</label><br>
+                <input type="radio" name="tp1" value="1" id="tp1d">
+                <label for="tp1d">Descending</label><br>
+                <br>
+                <span>Tone 2:</span><br>
+                <input type="radio" name="tp2" value="0" id="tp2a" required>
+                <label for="tp2a">Ascending</label><br>
+                <input type="radio" name="tp2" value="1" id="tp2d">
+                <label for="tp2d">Descending</label><br>
+                <br>
+                <span>Tone 3:</span><br>
+                <input type="radio" name="tp3" value="0" id="tp3a" required>
+                <label for="tp3a">Ascending</label><br>
+                <input type="radio" name="tp3" value="1" id="tp3d">
+                <label for="tp3d">Descending</label><br>
+                <br>
+                <span>Tone 4:</span><br>
+                <input type="radio" name="tp4" value="0" id="tp4a" required>
+                <label for="tp4a">Ascending</label><br>
+                <input type="radio" name="tp4" value="1" id="tp4d">
+                <label for="tp4d">Descending</label><br>
 
-                <p>Tone 2:</p>
-                <input type="radio" name="tp2" value="0" required> Ascending<br>
-                <input type="radio" name="tp2" value="1"> Descending<br>
-
-                <p>Tone 3:</p>
-                <input type="radio" name="tp3" value="0" required> Ascending<br>
-                <input type="radio" name="tp3" value="1"> Descending<br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="submit">
             </form>
 
             <?php if($_SESSION['tpflag']==1){ ?>
+                <!--First pair of tritones-->
                 <div id="piechart"></div>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
@@ -118,7 +135,7 @@
                         ]);
 
                         var options = {
-                                'title': 'Results 1',
+                                'title': 'Tritone pair 1',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
                                 'colors': ['#23D5B3', '#D52345'],
                                 'width':350, 'height':300, 
@@ -133,6 +150,8 @@
                         chart.draw(data, options);
                     }
                 </script>
+
+                <!--Second pair of tritones-->
                 <div id="piechart2"></div>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
@@ -147,7 +166,7 @@
                         ]);
 
                         var options = {
-                                'title': 'Results 2',
+                                'title': 'Tritone pair 2',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
                                 'colors': ['#23D5B3', '#D52345'],
                                 'width':350, 'height':300, 
@@ -162,6 +181,7 @@
                         chart.draw(data, options);
                     }
                 </script>
+                <!--Third pair of tritones-->
                 <div id="piechart3"></div>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
@@ -176,7 +196,7 @@
                         ]);
 
                         var options = {
-                                'title': 'Results 3',
+                                'title': 'Tritone pair 3',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
                                 'colors': ['#23D5B3', '#D52345'],
                                 'width':350, 'height':300, 
@@ -191,6 +211,37 @@
                         chart.draw(data, options);
                     }
                 </script>
+                <!--Fourth pair of tritones-->
+                <div id="piechart4"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Results', 'Responses'],
+                        ['Ascending', <?php echo $atp4; ?>],
+                        ['Descending', <?php echo $dtp4; ?>]
+                        ]);
+
+                        var options = {
+                                'title': 'Tritone pair 4',
+                                'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
+                                'colors': ['#23D5B3', '#D52345'],
+                                'width':350, 'height':300, 
+                                'pieHole':0.4,
+                                'pieSliceText':'none',
+                                'slices': {0: {offset: 0}, 1: {offset: 0}},
+                                'chartArea':{left:'1vw',top:'0vw',width:'10vw',height:'10vw'},
+                                'legend':{position: 'right', textStyle: {color: '#f2f2f2', fontSize: 11, fontName:'Lato'}},
+                                backgroundColor: { fill:'transparent' }
+                        };
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
+                        chart.draw(data, options);
+                    }
+                </script>
+                
             <?php } ?>
         </div>
     </div>
