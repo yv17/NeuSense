@@ -255,7 +255,7 @@ hr{
     display: flex;
     /*border: 1px solid rgb(242,242,242);*/ 
     padding-top: 1.17vw;
-    padding-right: 0.8vw;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -270,7 +270,6 @@ hr{
     display: flex;
     /*border: 1px solid rgb(242,242,242);*/ 
     padding-top: 1.17vw;
-    padding-right: 0.8vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
