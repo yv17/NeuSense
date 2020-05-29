@@ -7,6 +7,9 @@
         $left = $_SESSION['left'];
         $right = $_SESSION['right'];
         $unclear = $_SESSION['unclear'];
+        if($_SESSION['oitextflag'] == 1){
+            $oitext = $_SESSION['oitext'];
+        }
     }
 ?>
 
@@ -14,7 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -31,10 +33,6 @@
                 <a href="Scale_illusion.html">Mysterious Melody</a>
                 <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
-                <a href="DPOAE.html">DPOAE</a>
-                <a href="Continuity_illusion.html">Continuity Illusion</a>
-                <a href="Interleaved_melodies.html">Interleaved Melodies</a>
-                <a href="Binaural_beats.html">Binaural Beats</a>
 
             </div>
         </div>
@@ -64,6 +62,7 @@
                 It is likely that what you heard is different from the actual sound pattern.
                 Most often, people hear a repeating high tone in one ear and a repeating low tone in the other. 
                 Other people report hearing different patterns, such as a periodic reversal of tones in each ear; studies show that left handed people are more likely to experience these variations<sup>1</sup>.
+                <br>
                 <br>
                 The real sound pattern is presented below along with the most common perception. 
                 <br>
@@ -126,13 +125,19 @@
             </p>
         </div>
 
-        <div id="oi_poll">
-                <p>In which ear do you hear the high tones?</p>
+        <div class="poll">
+                <span>In which ear do you hear the high tones?</span><br>
                 <form action="oi.php" method="POST">
-                    <input type="radio" name="oi" value="0" required> Left ear<br>
-                    <input type="radio" name="oi" value="1"> Right ear<br>
-                    <input type="radio" name="oi" value="2"> Unclear<br>
-                    <input type="submit" value="Submit">
+                    <input type="radio" name="oi" value="0" id="left" required>
+                    <label for="left">Left ear</label><br>
+
+                    <input type="radio" name="oi" value="1" id="right">
+                    <label for="right">Right ear</label><br>
+
+                    <input type="radio" name="oi" value="2" id="unclear">
+                    <label for="unclear">Unclear</label><br>
+
+                    <input type="submit" value="Submit" class="submit">
                 </form>
 
                 <?php if($_SESSION['oiflag']==1){ ?>
@@ -166,7 +171,7 @@
                             chart.draw(data, options);
                         }
                     </script>
-                <?php } ?>
+                <?php echo 'Interesting statistics:<br><br>' . $oitext; } ?>
         </div>
 
     </div>
