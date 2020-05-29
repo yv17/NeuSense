@@ -45,9 +45,11 @@
         }
     }
 
+    // Count number of each response in relation to user survey response
     // i loops over poll responses
     // j loops over different categories
     // k loops over different groups in each category
+    // e.g. array(0,0,0): First 0 means response 0; Second 0 means age; Third 0 means below 18
     for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
             for($k=0; $k<$k_loop[$j]; $k++){
@@ -68,7 +70,7 @@
     }
 
     // To obtain percentage, each element divide by total of category
-    // Obtain normalising factor
+    // Obtain normalising factors
     
     // Obtain frequency of response for age
     // Indexed by 0, 18, 25, 40, 60
@@ -129,8 +131,7 @@
         $totalN = $totalN + $trainingN;
     }
 
-
-    // Normalising
+    // Normalising to percentage
     for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
             if($j==0){
@@ -150,6 +151,7 @@
         }
     }
 
+    // Display percentage values
     for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
             for($k=0; $k<$k_loop[$j]; $k++){
@@ -165,18 +167,41 @@
     $text[2] = array('with no training', 'with some training', 'with formal training');
     $textresp = array('heard it in the left ear', 'heard it in the right ear', 'found it unclear');
 
-    $speciali = array();
-    $specialj = array();
-    $specialk = array();
+    // Finding the three lowest percentages between 0% and 15%
+    $noMin = 3;
+    $firstMin = 100;
+    $secondMin = 100;
+    $thirdMin = 100;
+    $speciali = array(-1,-1,-1);
+    $specialj = array(-1,-1,-1);
+    $specialk = array(-1,-1,-1);
     $count = 0;
     for($i=0; $i<3; $i++){
         for($j=0; $j<3; $j++){
             for($k=0; $k<$k_loop[$j]; $k++){
                 if($oires[$i][$j][$k]>0 && $oires[$i][$j][$k]<15){
-                    $speciali[$count] = $i;
-                    $specialj[$count] = $j;
-                    $specialk[$count] = $k;
                     $count++;
+                    if($oires[$i][$j][$k] < $firstMin){
+                        $thirdMin = $secondMin;
+                        $secondMin = $firstMin;
+                        $firstMin = $oires[$i][$j][$k];
+                        $speciali[0] = $i;
+                        $specialj[0] = $j;
+                        $specialk[0] = $k;
+                    }
+                    elseif($oires[$i][$j][$k] < $secondMin){
+                        $thirdMin = $secondMin;
+                        $secondMin = $oires[$i][$j][$k];
+                        $speciali[1] = $i;
+                        $specialj[1] = $j;
+                        $specialk[1] = $k;
+                    }
+                    elseif($oires[$i][$j][$k] < $thirdMin){
+                        $thirdMin = $oires[$i][$j][$k];
+                        $speciali[2] = $i;
+                        $specialj[2] = $j;
+                        $specialk[2] = $k;
+                    }
                 }
             }
         }
@@ -185,15 +210,17 @@
     if($count>0){
         $_SESSION['oitextflag'] = 1;
         $oitext = '';
-        for($l=0; $l<$count; $l++){
+        for($l=0; $l<$noMin; $l++){
             $i = $speciali[$l];
             $j = $specialj[$l];
             $k = $specialk[$l];
-            $val = number_format($oires[$i][$j][$k], 1);
-            echo $val . '% of people who are ' . $text[$j][$k] . ' ' . $textresp[$i];
-            echo '<br>';
-    
-            $oitext = $oitext . $val . '% of people ' . $text[$j][$k] . ' ' . $textresp[$i] . '<br><br>';
+            if($i>-1 || $j>-1 || $k>-1){
+                $val = number_format($oires[$i][$j][$k], 1);
+                echo $val . '% of people who are ' . $text[$j][$k] . ' ' . $textresp[$i];
+                echo '<br>';
+        
+                $oitext = $oitext . $val . '% of people ' . $text[$j][$k] . ' ' . $textresp[$i] . '<br><br>';
+            }
         }
         $oitext = $oitext . '*Data compiled over ' . $totalN . ' people';
         $_SESSION['oitext'] = $oitext;
@@ -202,8 +229,10 @@
         $_SESSION['oitextflag'] = 0;
     }
 
+    // Poll has been answered
     $_SESSION['oiflag'] = 1;
 
+    // Return to illusion page
     header('Location: Octave_illusion.php');
 
     function countEachOI($which){
