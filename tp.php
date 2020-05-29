@@ -5,13 +5,14 @@
     $tp1 = $_POST["tp1"];
     $tp2 = $_POST["tp2"];
     $tp3 = $_POST["tp3"];
+    $tp4 = $_POST["tp4"];
 
     //echo $id . '<br>' . $tp1 . '<br>'. $tp2 . '<br>'. $tp3 . '<br>';
 
     $db = pg_connect("host=localhost port=5432 dbname=neusense user=neusenseuser password=password");
 
     //Insert to db and print to screen
-    $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3} WHERE id=$id";
+    $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3}, tp4={$tp4} WHERE id=$id";
     $result = pg_query($query);
 
 
@@ -42,7 +43,16 @@
         $dtp3 = $row["count"];
     }
 
-    setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3);
+    $result = countEachTP('tp4',0);
+    while($row = pg_fetch_array($result)){
+        $atp4 = $row["count"];
+    }
+    $result = countEachTP('tp4',1);
+    while($row = pg_fetch_array($result)){
+        $dtp4 = $row["count"];
+    }
+
+    setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3, $atp4, $dtp4);
     $_SESSION['tpflag'] = 1;
     printTP();
 
@@ -55,13 +65,15 @@
         return $result;
     }
 
-    function setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3){
+    function setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3, $atp4, $dtp4){
         $_SESSION['atp1'] = $atp1;
         $_SESSION['dtp1'] = $dtp1;
         $_SESSION['atp2'] = $atp2;
         $_SESSION['dtp2'] = $dtp2;
         $_SESSION['atp3'] = $atp3;
         $_SESSION['dtp3'] = $dtp3;
+        $_SESSION['atp4'] = $atp4;
+        $_SESSION['dtp4'] = $dtp4;
     }
 
     function printTP(){
