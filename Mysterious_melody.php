@@ -93,7 +93,7 @@
                     <label for="HBS">Happy Birthday Song</label><br>
 
                     <input type="radio" name="mm" value="2" id="TP">
-                    <label for="TP">The Pretender</label><br>
+                    <label for="TP">The Entertainer</label><br>
 
                     <input type="radio" name="mm" value="3" id="OMDHAF">
                     <label for="OMDHAF">Old McDonald Had A Farm</label><br>
