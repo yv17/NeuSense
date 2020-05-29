@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -30,6 +31,10 @@
                 <a href="Scale_illusion.html">Mysterious Melody</a>
                 <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.html">Interleaved Melodies</a>
+                <a href="Binaural_beats.html">Binaural Beats</a>
 
             </div>
         </div>

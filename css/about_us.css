@@ -172,6 +172,66 @@ hr {
     text-align: center;
 }
 
+.Josh_pic{
+    padding-top: 7vw;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Josh_text{
+    margin-top: 2.3vw;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
+
+.Beth_pic{
+    padding-top: 7vw;
+    grid-column-start:3;
+    grid-column-end: 3;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Beth_text{
+    margin-top: 2.3vw;
+    grid-column-start:3;
+    grid-column-end: 3;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
+
+.Sam_pic{
+    padding-top: 7vw;
+    grid-column-start:4;
+    grid-column-end: 4;
+    grid-row-start:3;
+    grid-row-end:3;
+    align-content: center;
+    text-align: center;
+}
+
+.Sam_text{
+    margin-top: 2.3vw;
+    grid-column-start:4;
+    grid-column-end:4;
+    grid-row-start:4;
+    grid-row-end:4;
+    align-content: center;
+    text-align: center;
+}
+
 .Sabrina_pic{
     grid-column-start:2;
     grid-column-end: 2;
@@ -210,6 +270,25 @@ hr {
     text-align: center;
 }
 
+.ikajung_pic{
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    align-content: center;
+    text-align: center;
+}
+
+.ikajung_text{
+    margin-top: 2.3vw;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    align-content: center;
+    text-align: center;
+}
+
 .textbox{
     color: rgb(242,242,242);
     font-family: 'Lato', sans-serif;
@@ -218,4 +297,5 @@ hr {
     grid-column-start: 1;
     grid-column-end: 1;
 }
+
 
