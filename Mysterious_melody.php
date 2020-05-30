@@ -34,7 +34,7 @@
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
-                <a href="Interleaved_melodies.html">Interleaved Melodies</a>
+                <a href="Interleaved_melodies.php">Interleaved Melodies</a>
                 <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
         </div>
@@ -113,7 +113,7 @@
                             ['Results', 'Responses'],
                             ['Twinkle Twinkle Little Star', <?php echo $TTLS; ?>],
                             ['Happy Birthday Song', <?php echo $HBS; ?>],
-                            ['The Pretender', <?php echo $TP; ?>],
+                            ['The Entertainer', <?php echo $TP; ?>],
                             ['Old McDonald Had A Farm', <?php echo $OMDHAF; ?>]
                             ]);
 

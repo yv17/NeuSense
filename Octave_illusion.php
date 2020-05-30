@@ -7,6 +7,9 @@
         $left = $_SESSION['left'];
         $right = $_SESSION['right'];
         $unclear = $_SESSION['unclear'];
+        if($_SESSION['oitextflag'] == 1){
+            $oitext = $_SESSION['oitext'];
+        }
     }
 ?>
 
@@ -27,10 +30,13 @@
                 <a href="Ascending_pitch.html">Ascending Pitch</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
-                <a href="Scale_illusion.html">Mysterious Melody</a>
+                <a href="Mysterious_melody.php">Mysterious Melody</a>
                 <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
-
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.php">Interleaved Melodies</a>
+                <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
         </div>
         <a class="navbarbtn" href="about_us.html">ABOUT US</a>
@@ -135,21 +141,6 @@
                     <label for="unclear">Unclear</label><br>
 
                     <input type="submit" value="Submit" class="submit">
-                    <!--<input type="radio" name="oi" value="0" required> Left ear<br>
-                    <input type="radio" name="oi" value="1"> Right ear<br>
-                    <input type="radio" name="oi" value="2"> Unclear<br>
-                    <input type="submit" value="Submit">-->
-                    <!--<span>What is your age?</span><br>
-                    <input type="radio" name="age" value="0" id="age1" required>
-                            <label for="age1">Under 18</label><br>
-                            <input type="radio" name="age" value="1" id="age2">
-                            <label for="age2">18 - 25</label><br>
-                            <input type="radio" name="age" value="2" id="age3">
-                            <label for="age3">25 - 39</label><br>
-                            <input type="radio" name="age" value="3" id="age4">
-                            <label for="age4">40 - 60</label><br>
-                            <input type="radio" name="age" value="4" id="age5">
-                            <label for="age5">Above 60</label><br>-->
                 </form>
 
                 <?php if($_SESSION['oiflag']==1){ ?>
@@ -183,7 +174,12 @@
                             chart.draw(data, options);
                         }
                     </script>
-                <?php } ?>
+                <?php 
+                    if($_SESSION['oitextflag'] == 1){
+                        echo 'Interesting statistics:<br><br>' . $oitext; 
+                    } 
+                }
+                ?>
         </div>
 
     </div>
