@@ -161,12 +161,6 @@
         }
     }
 
-    $text = array();
-    $text[0] = array('who are under 18','who are between 18 and 25','who are between 25 and 40','who are between 40 and 60','who are above 60');
-    $text[1] = array('who are left handed', 'who are right handed', 'who are ambidextrous');
-    $text[2] = array('with no training', 'with some training', 'with formal training');
-    $textresp = array('heard it in the left ear', 'heard it in the right ear', 'found it unclear');
-
     // Finding the three lowest percentages between 0% and 15%
     $noMin = 3;
     $firstMin = 100;
@@ -206,6 +200,12 @@
             }
         }
     }
+
+    $text = array();
+    $text[0] = array('who are under 18','who are between 18 and 25','who are between 25 and 40','who are between 40 and 60','who are above 60');
+    $text[1] = array('who are left handed', 'who are right handed', 'who are ambidextrous');
+    $text[2] = array('with no music training', 'with some music training', 'with formal music training');
+    $textresp = array('heard it in the left ear', 'heard it in the right ear', 'found it unclear');
 
     if($count>0){
         $_SESSION['oitextflag'] = 1;

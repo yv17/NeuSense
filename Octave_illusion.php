@@ -171,7 +171,12 @@
                             chart.draw(data, options);
                         }
                     </script>
-                <?php echo 'Interesting statistics:<br><br>' . $oitext; } ?>
+                <?php 
+                    if($_SESSION['oitextflag'] == 1){
+                        echo 'Interesting statistics:<br><br>' . $oitext; 
+                    } 
+                }
+                ?>
         </div>
 
     </div>

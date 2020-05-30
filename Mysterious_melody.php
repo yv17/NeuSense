@@ -113,7 +113,7 @@
                             ['Results', 'Responses'],
                             ['Twinkle Twinkle Little Star', <?php echo $TTLS; ?>],
                             ['Happy Birthday Song', <?php echo $HBS; ?>],
-                            ['The Pretender', <?php echo $TP; ?>],
+                            ['The Entertainer', <?php echo $TP; ?>],
                             ['Old McDonald Had A Farm', <?php echo $OMDHAF; ?>]
                             ]);
 

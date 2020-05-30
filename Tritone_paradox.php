@@ -12,6 +12,9 @@
         $dtp3 = $_SESSION['dtp3'];
         $atp4 = $_SESSION['atp4'];
         $dtp4 = $_SESSION['dtp4'];
+        if($_SESSION['tptextflag'] == 1){
+            $tptext = $_SESSION['tptext'];
+        }
     }
 ?>
 
@@ -99,21 +102,21 @@
                 <label for="tp1d">Descending</label><br>
                 <br>
                 <span>Tone 2:</span><br>
-                <input type="radio" name="tp2" value="0" id="tp2a" required>
+                <input type="radio" name="tp2" value="2" id="tp2a" required>
                 <label for="tp2a">Ascending</label><br>
-                <input type="radio" name="tp2" value="1" id="tp2d">
+                <input type="radio" name="tp2" value="3" id="tp2d">
                 <label for="tp2d">Descending</label><br>
                 <br>
                 <span>Tone 3:</span><br>
-                <input type="radio" name="tp3" value="0" id="tp3a" required>
+                <input type="radio" name="tp3" value="4" id="tp3a" required>
                 <label for="tp3a">Ascending</label><br>
-                <input type="radio" name="tp3" value="1" id="tp3d">
+                <input type="radio" name="tp3" value="5" id="tp3d">
                 <label for="tp3d">Descending</label><br>
                 <br>
                 <span>Tone 4:</span><br>
-                <input type="radio" name="tp4" value="0" id="tp4a" required>
+                <input type="radio" name="tp4" value="6" id="tp4a" required>
                 <label for="tp4a">Ascending</label><br>
-                <input type="radio" name="tp4" value="1" id="tp4d">
+                <input type="radio" name="tp4" value="7" id="tp4d">
                 <label for="tp4d">Descending</label><br>
 
                 <input type="submit" value="Submit" class="submit">
@@ -242,7 +245,12 @@
                     }
                 </script>
                 
-            <?php } ?>
+            <?php 
+                if($_SESSION['tptextflag'] == 1){
+                    echo 'Interesting statistics:<br><br>' . $tptext; 
+                } 
+            }
+            ?>
         </div>
     </div>
     
