@@ -30,10 +30,13 @@
                 <a href="Ascending_pitch.html">Ascending Pitch</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
-                <a href="Scale_illusion.html">Mysterious Melody</a>
+                <a href="Mysterious_melody.php">Mysterious Melody</a>
                 <a href="Tritone_paradox.php">Tritone Paradox</a>
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
-
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.php">Interleaved Melodies</a>
+                <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
         </div>
         <a class="navbarbtn" href="about_us.html">ABOUT US</a>
