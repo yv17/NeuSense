@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Tritone Paradox</title>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Shepard_tone.html">Shepard's Tone</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -63,6 +64,7 @@
         </audio>     
         <br>
         <br>
+        <br>
         <b>What is going on? </b>
         <br>
         <br>
@@ -89,6 +91,7 @@
             <figcaption>Figure 2. Demonstrates a tritone highlights in brown (C and F#). They are equidistant apart clockwise and anticlockwise.</figcaption>
         </figure> 
         <br>
+        <br>
         <b>What is in the research? </b>
         <br>
         Diana Deutsch proposed the idea that people orientate their pitch class circle differently. For example one person may have the note C in the 12 o’clock position but another may have F in the 12 o’clock position. Subsequently, this appears to affect how they perceive a pitch change between a tritone, for example one would hear C - F# as ascending but the other person would hear it descending<sup>2</sup>.
@@ -104,6 +107,7 @@
         <br>
         <br>
         Finally, a study by Shimizu et al investigated the neuronal response to Shepard tones using fMRI. They were particularly interested in the areas involved in maintaining the illusion of pitch circularity. They identified areas in the auditory cortex, temporal lobes and surprisingly in the occipital cortex (which is usually connected to vision). One of the unique aspects of the study was that the team developed a method of measuring activation over a long period of time in fMRI, which had been difficult beforehand<sup>5</sup>.   
+        <br>
         <br>
         <br>
         <b>References</b>

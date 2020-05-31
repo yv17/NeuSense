@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mysterious Melody</title>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Shepard_tone.html">Shepard's Tone</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -60,6 +61,7 @@
                 </audio>
             <br>
             <br>
+            <br>
             <b>What does this tell us about human hearing?</b>
             <br>
             The most important factors that determine our ability to recognise a familiar tune are the pattern of rising and falling pitch (the contour of the tune), the intervals between notes and the pitch chroma of the notes (read more about pitch chroma here). 
@@ -73,6 +75,7 @@
             <br>
             <br>
             The significance of the prior information here, enabling us to perceive the familiar melody, demonstrates how top-down processing (the use of prior knowledge and context to process stimuli) plays a role in tune recognition.
+            <br>
             <br>
             <br>
             <b>References</b>

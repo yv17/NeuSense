@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Octave Illusion</title>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Shepard_tone.html">Shepard's Tone</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -59,6 +60,7 @@
                 </audio>
                 <br>
                 <br>
+                <br>
                 <b>How does it work? </b>
                 <br>
                 <br>
@@ -78,10 +80,12 @@
                 One hypothesis is that the illusion utilises the ‘what’ and ‘where’ pathways in the brain. The dominant ear determines the pitch of the perceived tone (for example, a high tone heard in the right ear) - the ‘what’ pathway. The ear that receives the high tone determines the location of the sound (in this example the tone would be localised to the right) - the ‘where’ pathway<sup>2</sup>.
                 <br>
                 <br>
+                <br>
                 <b>Is this used anywhere?</b>
                 <br>
                 <br>
                 The octave illusion gave rise to further studies on the ‘what’ and ‘where’ pathways. Functional MRI studies have sought to determine the specific location of these pathways and subsequently, better understand neural sound processing. 
+                <br>
                 <br>
                 <br>
                 <b>What is in the detailed research? </b>
@@ -125,6 +129,7 @@
                 The research team suggest that since this group does not perceive the illusion, they hear a rhythmic octave jump in each ear and this activates the PMC. 
                 <br>
                 Possibly, the individual threshold for perceiving rhythm affects our perception of the octave illusion <sup>3</sup>.
+                <br>
                 <br>
                 <br>
                 <b>References</b>

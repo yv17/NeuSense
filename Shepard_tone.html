@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/illusions_des.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="poll.js"></script>
+    <title>Shepard's Tone</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="navbarbtn" href="overview_page.html">HOME</a>
+        <div class="dropdown">
+            <button class="dropbtn">LIST<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="Shepard_tone.html">Shepard's Tone</a>
+                <a href="Octave_illusion.php">Octave Illusion</a>
+                <a href="Scale_illusion.html">Scale Illusion</a>
+                <a href="Mysterious_melody.php">Mysterious Melody</a>
+                <a href="Tritone_paradox.php">Tritone Paradox</a>
+                <a href="Timbre_illusion.html">Timbre Illusion</a>
+                <a href="DPOAE.html">DPOAE</a>
+                <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Interleaved_melodies.php">Interleaved Melodies</a>
+                <a href="Binaural_beats.html">Binaural Beats</a>
+            </div>
+        </div>
+        <a class="navbarbtn" href="about_us.html">ABOUT US</a>
+    </div>
+    <h1>Shepard's Tone</h1>
+    <h3>Illusion description</h3>
+    <hr>
+    <div class="gridcontainer">
+        <div class="textbox">
+            <p> 
+                <b>What is it?</b>
+                <br>
+                In 1964 Roger Shepard created a small series of tones which, when listened to on repeat, are heard to be endlessly increasing in pitch<sup>1</sup>. 
+                This is impossible! Similarly, when played in reverse the series is heard to be endlessly descending. Listen to the famous illusion here.
+                <br>
+                <br>
+                Following this work, a French composer Jean-Claude Risset adapted the illusion into a continuous ‘glissando’<sup>2</sup>.
+                <br>
+                <br>
+                <audio controls>
+                    <source src="sound_files/asc_tone.mp3" type="audio/mpeg">
+                </audio>
+                <br>
+                <br>
+                <br>
+                <b>How does this work?</b>
+                <br>
+                Shepard first demonstrated his famous illusion by creating a set of complex tones - tones made up of multiple frequencies, or multiple sound waves. 
+                <br>
+                <br>
+                Each tone consisted of ten frequency components spaced octaves apart. 
+                When we transcend an octave the frequency doubles, so if the lowest component had a frequency F, the higher 9 components would be multiples 2F, 4F, 8F, 16F and so on. 
+                <br>
+                <br>
+                One important underpinning of Shepard’s experiment was its basing on the helical model of pitch, which is most often understood to be how ‘high’ or ‘low’ a note sounds. This model contested the intuitive idea that as the frequency of a sound was increased, its pitch would increase in a linear fashion, and instead related pitch to frequency using a three-dimensional plot, shown in Figure 1.
+                <br>
+                <figure>
+                    <img src="img/asc1.png">
+                    <figcaption>Figure 1: The Helical Model of Pitch</figcaption>
+                </figure>
+                This suggests pitch has two defining aspects:
+                <ul>
+                    <li>pitch height, plotted on the y-axis</li>
+                    <li>pitch chroma, ‘class’ or ‘character’, visualised by the angle we are at around the helix
+                    </li>
+                </ul>
+                One full turn around the helix corresponds to incrementing one octave, and thus doubling the frequency, yet there is no change in pitch chroma!
+                <br>
+                <br>
+                According to this model, Shepard’s octave-spaced components were all of the same chroma. 
+                His goal was to create tones, each of a defined chroma, but with no single identifiable pitch height. 
+                The amplitudes of the components within a tone were fixed according to a bell-shaped curve, shown in Figure 2, making the very highest and lowest frequencies quieter relative to more middling ones. 
+                This meant all the tones would be perceived at a similar loudness. 
+                Moreover, whilst for any subsequent tone in the series all of the individual components are shifted to slightly higher frequencies with respect to the tone prior, due to the amplitude fixing of the bell-curve the contribution of these higher frequencies to the overall tone is modulated. 
+                This creates the percept of tones with ambiguous pitch heights.
+                <br>
+                <figure>
+                    <img src="img/asc2.png">
+                    <figcaption>Figure 2: Sound-pressure levels (dB) of the 10 simultaneously sounded components comprising one Shepard’s tone (black lines). The dotted lines represent the subsequent tone in the series, for which all components have been shifted upwards in frequency.</figcaption>
+                </figure>
+                <br>
+                Shepard described the findings of his experiment as endlessly traversing a pitch class circle, shown in Figure 3. This is a collapsed version of the helix from earlier. His research highlighted that, with the cue of pitch height somewhat obscured, most people tend to make judgements about pitch based on what he called ‘the proximity principle’. Listeners typically interpret a note as increasing in pitch if its most direct linkage to the note heard prior is made clockwise around the pitch class circle, and vice versa if anticlockwise.
+                <br>
+                <figure>
+                    <img src="img/asc3.png">
+                    <figcaption>Figure 3: The Pitch Class Circle</figcaption>
+                </figure>
+                <br>
+                <br>
+                <b>How did we recreate the illusion?</b>
+                <br>
+                Since Shepard’s work many other researchers and composers have found alternative ways to recreate this illusion. Diana Deutsch’s work is a notable example; she spaced the frequency components of her tones to imitate natural instrumental notes, widening the musical applications of the illusion<sup>3</sup>.
+                <br>
+                <br>
+                We recreated the illusion by overlaying three sequences which run through all the discrete tones, then playing it on a loop. The sequences each differ by an octave; the middle octave sequence is heard at a constant 100% volume, however the success of the illusion is owed to changing the volumes of the higher and lower octave sequences. Whilst the highest octave fades from 100% to 0% volume, the lowest rises from 0% to 100%. You always hear two sequences with a pitch difference. Your brain uses one as a reference and, from the other, infers that the pitch is rising. The fading volumes means you do not register the sequences beginning or ending, and so hear a forever ascending scale. 
+                <br>
+                <br>
+                <br>
+                <b>What does this tell us about pitch?</b>
+                <br>
+                Pitch is an important psychoacoustic property of sound. 
+                That is to say, it is something we perceive that ‘does not map simply to the physical properties of sound’<sup>4</sup>.
+                The American National Standards Institute defines pitch as ‘the scale on which sounds may be ordered from high to low’<sup>5</sup>.
+                Yet musicians have long recognised the similarity between tones exactly an octave apart. 
+                This is reflected in the Western musical scale where notes spaced an octave apart are denoted by the same letter.
+                <br>
+                <br>
+                Shepard’s results provide evidence to support the helical model of pitch in which pitch has two defining attributes - it’s height and it’s chroma. This model better represents the similarities heard between octave-spaced notes, categorising them as the same chroma and positioning them closer together in vertical space using the helical scale.
+                <br>
+                <br>
+                <br>
+                <b>What is the Shepard-Risset glissando?</b>
+                <br>
+                The Shepard-Risset glissando is an expansion on Shepard’s famed illusion, yet here it is presented as a continuous glide rather than discrete tones<sup>2</sup>.
+                We created the ascending and descending versions here by combining multiple sections of logarithmic sweeps (ascending or descending). 
+                By playing these sections continuously, you are tricked in to hearing an infinitely ascending or descending glissando. A normal distribution is applied to eliminate higher frequency harmonics.
+                <br>
+                <br>
+                Listeners report emotive responses to this version of the illusion, leading to its incorporation into music pieces<sup>6</sup>. Furthermore, in one study participants described experiencing motion sickness and a sensation of loss of equilibrium when listening to the glide<sup>7</sup>.
+                <br>
+                <br>
+                <br>
+                <b>Uses of the illusions</b>
+                <br>
+                Shepard scales can be found in music and a variety of sound effects, for example the Batpod sound effect in the Dark Knight. 
+                ‘The Mole’, an orchestral piece from the film Dunkirk, employed the illusion to create extreme tension. 
+                You can listen to it <a href="https://www.youtube.com/watch?v=wlXjP59jZCM">here</a>. 
+                Other notable examples are the music accompanying the ascending stairs in the game Super Mario, and in Pink Floyd’s song Echoes.
+                <br>
+                <br>
+                <br>
+                <b>References</b>
+                <ol>
+                    <li>Shepard, Roger N. 1964. "Circularity in Judgments of Relative Pitch." The Journal of the Acoustical Society of America (Acoustical Society of America (ASA)) 36 (12): 2346-2353.
+                    </li>
+                    <li>Risset, J. C. 1969. “Pitch control and pitch paradoxes demonstrated with computer synthesized sounds.” The Journal of the Acoustical Society of America (Acoustical Society of America (ASA)) 46:
+                    </li>
+                    <li>Deutsch, Diana, Kevin Dooley, and Trevor Henthorn. 2008. "Pitch circularity from tones comprising full harmonic series." The Journal of the Acoustical Society of America (Acoustical Society of America (ASA)) 124 (1): 589-597.
+                    </li>
+                    <li>McLachlan, N.M., 2016. Timbre, pitch, and music.</li>
+                    <li>Terminology, A.P., 1973. S3. 20. New York: American National Standards Institute.</li>
+                    <li>Vernooij, Eveline, Angelo Orcalli, Franco Fabbro, and Cristiano Crescentini. 2016. "Listening to the Shepard-Risset glissando: The relationship between emotional response, disruption of equilibrium, and personality." Frontiers in Psychology (Frontiers Research Foundation) 7 (MAR).
+                    </li>
+                    <li>Mursic, Rebecca A., and Stephen Palmisano. 2019. "The Shepard–Risset Glissando: Identifying the Origins of Metaphorical Auditory Vection and Motion Sickness." Multisensory Research (Brill) 1-26.</li>
+                </ol>
+            </p>
+        </div>
+    </div>
+     
+</body>
