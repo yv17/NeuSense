@@ -212,3 +212,8 @@ table, th, td {
   th{
       padding: 1.17vw;
   }
+
+  figcaption{
+      font-size: medium;
+      text-align: center;
+  }

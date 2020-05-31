@@ -70,7 +70,10 @@
                 The real sound pattern is presented below along with the most common perception. 
                 <br>
                 <br>
-                <img src="img/oct1.png">
+                <figure>
+                    <img src="img/oct1.png">
+                    <figcaption>Figure 1: The top two scores shows the pattern played to the left and right ears. The second set of scores demonstrated the most common perception.</figcaption>
+                </figure>
                 <br>
                 One hypothesis is that the illusion utilises the ‘what’ and ‘where’ pathways in the brain. The dominant ear determines the pitch of the perceived tone (for example, a high tone heard in the right ear) - the ‘what’ pathway. The ear that receives the high tone determines the location of the sound (in this example the tone would be localised to the right) - the ‘where’ pathway<sup>2</sup>.
                 <br>
@@ -95,7 +98,10 @@
                 <br>
                 A1 is most likely responsible for detecting changes in pitch and this has been established in previous studies. 
                 <br>
-                <img src="img/oct2.png">
+                <figure>
+                    <img src="img/oct2.png">
+                    <figcaption>Figure 2: Depicts the auditory cortex.</figcaption>
+                </figure>
                 <br>
                 The research team suggested that the aforementioned ‘what’ pathway lies in the anterior auditory cortex and comprises the planum polare. 
                 <br>
@@ -103,7 +109,10 @@
                 <br>
                 The team also suggested the ‘where’ pathway lies in the posterior auditory cortex and includes the inferior parietal lobule. 
                 <br>
-                <img src="img/oct3.png">
+                <figure>
+                    <img src="img/oct3.png">
+                    <figcaption>Figure 3: Illustrated the parietal lobe in the brain.</figcaption>
+                </figure>
                 <br>
                 Additionally, they looked at activation differences in the right premotor cortex (PMC). 
                 <br>
