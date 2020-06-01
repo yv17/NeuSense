@@ -12,7 +12,7 @@
 ?>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -105,7 +105,9 @@
                     <input type="submit" value="Submit" class="submit">
                 </form>
 
-                <?php if($_SESSION['mmflag']==1){ ?>
+                <?php 
+                if($_SESSION['mmflag']==1){ echo "<br>Correct answer: The Entertainer";
+                ?>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
@@ -124,7 +126,7 @@
                             var options = {
                                 'title': 'Results',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
-                                'colors': ['#D52345', '#23D5B3', '#228CD5','#e8e227'],
+                                'colors': ['#D52345', '#228CD5', '#23D5B3','#e8e227'],
                                 'width':350, 'height':300, 
                                 'pieHole':0.4,
                                 'pieSliceText':'none',
