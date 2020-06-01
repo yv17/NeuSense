@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/int_icon.png" type="image/png">
+    <title>Interleaved Melodies</title>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Shepard_tone.html">Shepard's Tone</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -54,6 +56,7 @@
             <audio controls>
                 <source src="sound_files/interleaved_melodies.m4a" type="audio/mpeg">
             </audio>
+            <br>
             <br>
             <br>
             <b>Why does this happen? </b>

@@ -212,3 +212,18 @@ table, th, td {
   th{
       padding: 1.17vw;
   }
+
+  figcaption{
+      font-size: medium;
+      text-align: center;
+  }
+
+  a{
+      text-emphasis-color: none;
+      color: rgb(35,213,179);
+  }
+
+  caption{
+    font-size: medium;
+    text-align: center; 
+  }

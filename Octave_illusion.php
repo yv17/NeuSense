@@ -17,6 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/oct_icon.png" type="image/png">
+    <title>Octave Illusion</title>
 </head>
 
 <body>
@@ -27,7 +29,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Ascending_pitch.html">Ascending Pitch</a>
+                <a href="Shepard_tone.html">Shepard's Tone</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -59,6 +61,7 @@
                 </audio>
                 <br>
                 <br>
+                <br>
                 <b>How does it work? </b>
                 <br>
                 <br>
@@ -70,15 +73,20 @@
                 The real sound pattern is presented below along with the most common perception. 
                 <br>
                 <br>
-                <img src="img/oct1.png">
+                <figure>
+                    <img src="img/oct1.png">
+                    <figcaption>Figure 1: The top two scores shows the pattern played to the left and right ears. The second set of scores demonstrated the most common perception.</figcaption>
+                </figure>
                 <br>
                 One hypothesis is that the illusion utilises the ‘what’ and ‘where’ pathways in the brain. The dominant ear determines the pitch of the perceived tone (for example, a high tone heard in the right ear) - the ‘what’ pathway. The ear that receives the high tone determines the location of the sound (in this example the tone would be localised to the right) - the ‘where’ pathway<sup>2</sup>.
+                <br>
                 <br>
                 <br>
                 <b>Is this used anywhere?</b>
                 <br>
                 <br>
                 The octave illusion gave rise to further studies on the ‘what’ and ‘where’ pathways. Functional MRI studies have sought to determine the specific location of these pathways and subsequently, better understand neural sound processing. 
+                <br>
                 <br>
                 <br>
                 <b>What is in the detailed research? </b>
@@ -95,7 +103,10 @@
                 <br>
                 A1 is most likely responsible for detecting changes in pitch and this has been established in previous studies. 
                 <br>
-                <img src="img/oct2.png">
+                <figure>
+                    <img src="img/oct2.png">
+                    <figcaption>Figure 2: Depicts the auditory cortex.</figcaption>
+                </figure>
                 <br>
                 The research team suggested that the aforementioned ‘what’ pathway lies in the anterior auditory cortex and comprises the planum polare. 
                 <br>
@@ -103,7 +114,10 @@
                 <br>
                 The team also suggested the ‘where’ pathway lies in the posterior auditory cortex and includes the inferior parietal lobule. 
                 <br>
-                <img src="img/oct3.png">
+                <figure>
+                    <img src="img/oct3.png">
+                    <figcaption>Figure 3: Illustrated the parietal lobe in the brain.</figcaption>
+                </figure>
                 <br>
                 Additionally, they looked at activation differences in the right premotor cortex (PMC). 
                 <br>
@@ -116,6 +130,7 @@
                 The research team suggest that since this group does not perceive the illusion, they hear a rhythmic octave jump in each ear and this activates the PMC. 
                 <br>
                 Possibly, the individual threshold for perceiving rhythm affects our perception of the octave illusion <sup>3</sup>.
+                <br>
                 <br>
                 <br>
                 <b>References</b>
