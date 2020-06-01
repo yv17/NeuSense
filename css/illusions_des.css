@@ -214,16 +214,20 @@ table, th, td {
   }
 
   figcaption{
-      font-size: medium;
+      font-size: 1.25vw;
       text-align: center;
   }
 
   a{
-      text-emphasis-color: none;
-      color: rgb(35,213,179);
+      text-decoration: none;   
+  }
+
+  a:link, a:visited{
+    color: rgb(242,242,242);
+    border-bottom: 1px solid rgb(35,213,179);
   }
 
   caption{
-    font-size: medium;
+    font-size: 1.25vw;
     text-align: center; 
   }
