@@ -28,7 +28,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Shepard_tone.html">Shepard's Tone</a>
+                <a href="Shepard_tone.html">Shepard's Tones</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -36,6 +36,8 @@
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Timing_seq.html">Timing and Sequence Illusion</a>
+                <a href="Galloping.html">Galloping Rhythm</a>
                 <a href="Interleaved_melodies.php">Interleaved Melodies</a>
                 <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
@@ -51,9 +53,9 @@
             <p> 
             <b>What is it?</b>
             <br>
-            The mysterious melody illusion was first discovered in 1972 by Diana Deutsch. 
-            A familiar tune was modified so that the notes were randomly scattered between three different octaves<sup>1</sup> . 
-            When not informed what the tune was, listeners struggled to identify it, however once told they were able to hear the tune easily. 
+            The mysterious melody illusion was first discovered in 1972 by Diana Deutsch. <sup>1</sup>
+            A familiar tune was modified so that the notes were randomly scattered between three different octaves. 
+            This made the tune difficult to identify, however once told the name of the tune listeners could recognise it easily. 
             Listen to our recreation of the illusion here.
             <br>
             <br>
@@ -65,23 +67,28 @@
             <br>
             <b>What does this tell us about human hearing?</b>
             <br>
-            The most important factors that determine our ability to recognise a familiar tune are the pattern of rising and falling pitch (the contour of the tune), the intervals between notes and the pitch chroma of the notes (read more about pitch chroma here). 
-            In this experiment<sup>2</sup>, Deutsh transposed familiar melodies, preserving intervals and pitch chroma but randomly changing which octave each note was played in. 
-            In the absence of prior information (being told what tune they were listening to), subjects were unable to identify the melodies. 
-            This led Deutsch to conclude that ‘tune recognition takes place along a channel which is independent from that which gives rise to octave generalisation’. 
+            The most important factors that determine our ability to recognise a familiar tune are:
+            <ul>
+                <li>the pattern of rising and falling pitch</li>
+                <li>the intervals between notes</li>
+                <li>the pitch chroma of the notes (read more about pitch chroma <a target="_blank" rel="noopener noreferrer" href="Shepard_tone.html">here</a>) <sup>2</sup></li>
+            </ul>
+            In this experiment Deutsh transposed familiar melodies, preserving intervals and pitch chroma but randomly changing which octave each note was played in (its pitch height) and therefore changing the tune’s pattern of rising and falling pitch. 
+            Subjects were unable to identify these transposed melodies, which tells us pitch chroma and note intervals are insufficient cues for tune recognition on their own. 
             <br>
             <br>
-            As octave generalisation simply refers to our ability to recognise notes separated by octaves as being similar - in essence, acknowledging pitch chroma - this means preserving the pitch chroma of notes whilst their octave is altered is not sufficient to allow us to recognise a melody. 
-            However, subjects were able to use octave generalisation to confirm the identity of a tune when first told what the tune was!  
-            <br>
-            <br>
-            The significance of the prior information here, enabling us to perceive the familiar melody, demonstrates how top-down processing (the use of prior knowledge and context to process stimuli) plays a role in tune recognition.
+            However, when given ‘prior information’ - the name of the tune - subjects were able to utilise the pitch chroma and interval information to identify the melodies. 
+            This demonstrates what neurologists call top-down processing; the use of prior knowledge and context when processing stimuli. 
+            This is a very important and ubiquitous concept in neurology. 
+            Our nervous system is adapted to harvest the most information possible from stimuli through complex interlinking of its networks, and scientists are still working towards a full understanding of the complicated neural mechanisms behind tune recognition.
+
             <br>
             <br>
             <br>
             <b>References</b>
             <ol>
-                <li></li>
+                <li>Deutsch, D., 1972. Octave generalization and tune recognition. Perception & Psychophysics, 11(6), pp.411-412.</li>
+                <li>Dowling, W.J. and Hollombe, A.W., 1977. The perception of melodies distorted by splitting into several octaves: Effects of increasing proximity and melodic contour. Perception & Psychophysics, 21(1), pp.60-64.</li>
             </ol>
             </p>
         </div>
