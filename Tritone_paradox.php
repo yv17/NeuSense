@@ -72,7 +72,7 @@
         This illusion is based on the same concepts that underlie the Shepard tones, which you may have already listened to. The fundamental idea is that pitch is not just a linear scale of frequency, as often assumed, but actually possesses two dimensions: pitch height (which octave a tone belongs) and pitch chroma (where a tone lies in the octave). This is perhaps best demonstrated by the pitch helix shown below. 
         <br>
         <figure>
-            <img src="img/tri1.png">
+            <img src="img/tri1-inverse.png">
             <figcaption>Figure 1: The pitch helix. Demonstrates pitch chroma as a circle and pitch height forming a helix.</figcaption>
         </figure>
         <br>
@@ -88,7 +88,7 @@
         People generally hear an ascending pattern if the shortest vector between two tones travels clockwise and a descending pattern if it is anticlockwise. In this illusion, the two tones are equidistant apart, for example C and F#. This is a tritone. Now it is unclear whether they are going up or down in pitch, does the vector go clockwise or anticlockwise? 
         <br>
         <figure>
-            <img src="img/tri2.png">
+            <img src="img/tri2-inverse.png">
             <figcaption>Figure 2. Demonstrates a tritone highlights in brown (C and F#). They are equidistant apart clockwise and anticlockwise.</figcaption>
         </figure> 
         <br>
