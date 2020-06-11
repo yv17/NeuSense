@@ -1,14 +1,19 @@
 <?php
     include 'db.php';
 
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
     $oi = $_POST["oi"];
 
-    // Insert poll response into database
-    $query = "UPDATE pollresult SET oi={$oi} WHERE id=$id";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET oi={$oi} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
 
     // Fetching poll results
     $details = countEachOI(0,$pdo);
@@ -17,6 +22,12 @@
     $right = $details["count"];
     $details = countEachOI(2,$pdo);
     $unclear = $details["count"];
+
+    if($consent==0){
+        if($oi==0) $left++;
+        elseif($oi==1) $right++;
+        elseif($oi==2) $unclear++;
+    }
 
     // Setting session variables to be accessed on respective illusion page
     setOI($left, $right, $unclear);

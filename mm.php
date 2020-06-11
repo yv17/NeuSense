@@ -1,14 +1,19 @@
 <?php
     include 'db.php';
     
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
     $mm = $_POST["mm"];
 
-    // Insert poll response into database
-    $query = "UPDATE pollresult SET mm={$mm} WHERE id=$id";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET mm={$mm} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
 
     // Fetching poll results
     $details = countEachMM(0,$pdo);
@@ -19,6 +24,13 @@
     $TP = $details["count"];
     $details = countEachMM(3,$pdo);
     $OMDHAF = $details["count"];
+
+    if($consent==0){
+        if($mm==0) $TTLS++;
+        elseif($mm==1) $HBS++;
+        elseif($mm==2) $TP++;
+        elseif($mm==3) $OMDHAF++;
+    }
 
     setMM($TTLS, $HBS, $TP, $OMDHAF);
     $_SESSION['mmflag'] = 1;

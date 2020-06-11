@@ -1,10 +1,10 @@
 <?php
 
-$host = "ec2-52-44-55-63.compute-1.amazonaws.com";
-$user = "blcnajqcdilkdu";
-$password = "02a8100b19b8e94e7265511faa6ed9da8e420724dcc12a0722028eba091a389e";
-$dbname = "db8j18c8uas5d3";
+$host = "ec2-18-232-143-90.compute-1.amazonaws.com";
+$dbname = "dc5oj7nljkdpa8";
+$user = "uvhslhwhgqeqfd";
 $port = "5432";
+$password = "8a346654d6716611a0c11a9ee8fa05d397795ea4812f1fb01d9e99d40401741f";
 
 try{
     // Set DSN data source name
@@ -17,6 +17,7 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e){
+    echo "Error connecting to database<br><br>";
     echo "Connection failed: " . $e->getMessage();
 }
 

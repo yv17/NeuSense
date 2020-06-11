@@ -1,7 +1,10 @@
 <?php
     include 'db.php';
 
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
 
     $tp1 = $_POST["tp1"];
@@ -9,10 +12,12 @@
     $tp3 = $_POST["tp3"];
     $tp4 = $_POST["tp4"];
 
-    // Insert poll response into database
-    $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3}, tp4={$tp4} WHERE id=$id";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3}, tp4={$tp4} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
 
     // Fetching poll results
     $details = countEachTP('tp1',0,$pdo);
@@ -34,6 +39,13 @@
     $atp4 = $details["count"];
     $details = countEachTP('tp4',7,$pdo);
     $dtp4 = $details["count"];
+
+    if($consent==0){
+        if($tp1==0) $atp1++; elseif($tp1==1) $dtp1++;
+        if($tp2==2) $atp2++; elseif($tp2==3) $dtp2++;
+        if($tp3==4) $atp3++; elseif($tp3==5) $dtp3++;
+        if($tp4==6) $atp4++; elseif($tp4==7) $dtp4++;
+    }
 
     setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3, $atp4, $dtp4);
 
