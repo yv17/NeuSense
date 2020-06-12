@@ -58,72 +58,73 @@
     <div class="gridcontainer">
         <div class="textbox">
         <p>
-            <b>What is the tritone paradox? </b>
-            <br>
-            This illusion is best heard in groups! (But don’t worry if you are on your own). You will hear two consecutive tones and you must decide whether you think they are ascending or descending in pitch. You might find that other people disagree with you… 
-            <br>
-            <br>
-            <audio controls>
-                    <source src="sound_files/tritone.mp3" type="audio/mpeg">
-            </audio>     
-            <br>
-            <br>
-            <br>
-            <b>What is going on? </b>
-            <br>
-            <br>
-            This illusion is based on the same concepts that underlie the Shepard tones, which you may have already listened to. The fundamental idea is that pitch is not just a linear scale of frequency, as often assumed, but actually possesses two dimensions: pitch height (which octave a tone belongs) and pitch chroma (where a tone lies in the octave). This is perhaps best demonstrated by the pitch helix shown below. 
-            <br>
-            <figure>
-                <img src="img/tri1.png">
-                <figcaption>Figure 1: The pitch helix. Demonstrates pitch chroma as a circle and pitch height forming a helix.</figcaption>
-            </figure>
-            <br>
-            <i>Octave: Notes A through to G#, though can start and finish at any note. An A on a higher octave has double the frequency of an A below. (eg 440Hz in first octave and 880Hz in the next)<sup>1</sup></i>  
-            <br>
-            <br>
-            Roger Shepard created complex tones that consist of multiple harmonics and are attenuated to fit a bell shaped curve. The results were tones that became ambiguous in relation to pitch height so people could only judge the tone based on a pitch circle. This meant the helix had collapsed into a circle! 
-            <br>
-            <br>
-            <i>Harmonic: a note that has a positive integer multiple of the original note. For example if the original note has frequency 150 Hz, harmonics include 300 Hz (multiple of 2), 600 Hz (multiple of 4) and so forth.</i>
-            <br>
-            <br>
-            People generally hear an ascending pattern if the shortest vector between two tones travels clockwise and a descending pattern if it is anticlockwise. In this illusion, the two tones are equidistant apart, for example C and F#. This is a tritone. Now it is unclear whether they are going up or down in pitch, does the vector go clockwise or anticlockwise? 
-            <br>
-            <figure>
-                <img src="img/tri2.png">
-                <figcaption>Figure 2. Demonstrates a tritone highlights in brown (C and F#). They are equidistant apart clockwise and anticlockwise.</figcaption>
-            </figure> 
-            <br>
-            <br>
-            <b>What is in the research? </b>
-            <br>
-            Diana Deutsch proposed the idea that people orientate their pitch class circle differently. For example one person may have the note C in the 12 o’clock position but another may have F in the 12 o’clock position. Subsequently, this appears to affect how they perceive a pitch change between a tritone, for example one would hear C - F# as ascending but the other person would hear it descending<sup>2</sup>.
-            <br>
-            <br>
-            Deutch conducted further research and found evidence that the orientation of pitch class and tritone perception was related to linguistic exposure and particularly, the language people were exposed to at an early age. She took two groups of Vietnamese speakers (a tonal language), one group that had come to the US from Vietnam as an adult and one that had grown up in the US but had still been exposed to Vietnamese, and compared them to a group of native English speakers in California. She found that the two groups of Vietnamese speakers perceived the tritone similarly, despite growing up in different places. They also significantly differed from the native Californian English group<sup>3</sup>.
-            <br>
-            <br>
-            Research by Stephanie Malek seeked to theorise a different model that could explain pitch circularity and the tritone paradox. She used the psychoacoustic idea of virtual pitch. This idea says that when we hear a complex tone that is composed of multiple frequencies, such as a Shepard tone, we extract the greatest common divisor between the multiple frequencies and perceive this ‘virtual pitch’.
-            <br>
-            <br>
-            For example if the frequencies 100 Hz, 200Hz, and 400Hz were played as complex tone, the greatest common divisor is 100Hz, and we would perceive the pitch at 100Hz. She couples the idea of virtual pitch with a probabilistic threshold model to account for the different perceptions that people have<sup>4</sup>.
-            <br>
-            <br>
-            Finally, a study by Shimizu et al investigated the neuronal response to Shepard tones using fMRI. They were particularly interested in the areas involved in maintaining the illusion of pitch circularity. They identified areas in the auditory cortex, temporal lobes and surprisingly in the occipital cortex (which is usually connected to vision). One of the unique aspects of the study was that the team developed a method of measuring activation over a long period of time in fMRI, which had been difficult beforehand<sup>5</sup>.   
-            <br>
-            <br>
-            <br>
-            <b>References</b>
-            <ol>
-                <li>Britannica Editors, 2010, https://www.britannica.com/art/octave-music, Encyclopaedia Britannica
-                </li>
-                <li>Deutsch, D., 1992, Paradoxes of musical pitch, Scientific American</li>
-                <li>Deutsch, D., Henthorn T. and Dolson, M., 2004, Speech patterns heard early in life influence later perception of the tritone paradox. Music Perception</li>
-                <li>Stephanie Malek, 2018, Pitch Class and Envelope Effects in the Tritone Paradox Are Mediated by Differently Pronounced Frequency Preference Regions, Frontiers in Psychology</li>
-                <li>5.	Shimizu et al, 2007, Neuronal response to Shepard's tones. An auditory fMRI study using multifractal analysis, Brain Research</li>
-            </ol>
-        </p>    
+        <b>What is the tritone paradox? </b>
+        <br>
+        <br>
+        This illusion is best heard in groups! (But don’t worry if you are on your own). You will hear two consecutive tones and you must decide whether you think they are ascending or descending in pitch. You might find that other people disagree with you… 
+        <br>
+        <br>
+        <audio controls>
+                <source src="sound_files/tritone.mp3" type="audio/mpeg">
+        </audio>     
+        <br>
+        <br>
+        <br>
+        <b>What is going on? </b>
+        <br>
+        <br>
+        This illusion is based on the same concepts that underlie the Shepard tones, which you may have already listened to. The fundamental idea is that pitch is not just a linear scale of frequency, as often assumed, but actually possesses two dimensions: pitch height (which octave a tone belongs) and pitch chroma (where a tone lies in the octave). This is perhaps best demonstrated by the pitch helix shown below. 
+        <br>
+        <figure>
+            <img src="img/tri1-inverse.png">
+            <figcaption>Figure 1: The pitch helix. Demonstrates pitch chroma as a circle and pitch height forming a helix.</figcaption>
+        </figure>
+        <br>
+        <i>Octave: Notes A through to G#, though can start and finish at any note. An A on a higher octave has double the frequency of an A below. (eg 440Hz in first octave and 880Hz in the next)<sup>1</sup></i>  
+        <br>
+        <br>
+        Roger Shepard created complex tones that consist of multiple harmonics and are attenuated to fit a bell shaped curve. The results were tones that became ambiguous in relation to pitch height so people could only judge the tone based on a pitch circle. This meant the helix had collapsed into a circle! 
+        <br>
+        <br>
+        <i>Harmonic: a note that has a positive integer multiple of the original note. For example if the original note has frequency 150 Hz, harmonics include 300 Hz (multiple of 2), 600 Hz (multiple of 4) and so forth.</i>
+        <br>
+        <br>
+        People generally hear an ascending pattern if the shortest vector between two tones travels clockwise and a descending pattern if it is anticlockwise. In this illusion, the two tones are equidistant apart, for example C and F#. This is a tritone. Now it is unclear whether they are going up or down in pitch, does the vector go clockwise or anticlockwise? 
+        <br>
+        <figure>
+            <img src="img/tri2-inverse.png">
+            <figcaption>Figure 2. Demonstrates a tritone highlights in brown (C and F#). They are equidistant apart clockwise and anticlockwise.</figcaption>
+        </figure> 
+        <br>
+        <br>
+        <b>What is in the research? </b>
+        <br>
+        Diana Deutsch proposed the idea that people orientate their pitch class circle differently. For example one person may have the note C in the 12 o’clock position but another may have F in the 12 o’clock position. Subsequently, this appears to affect how they perceive a pitch change between a tritone, for example one would hear C - F# as ascending but the other person would hear it descending<sup>2</sup>.
+        <br>
+        <br>
+        Deutch conducted further research and found evidence that the orientation of pitch class and tritone perception was related to linguistic exposure and particularly, the language people were exposed to at an early age. She took two groups of Vietnamese speakers (a tonal language), one group that had come to the US from Vietnam as an adult and one that had grown up in the US but had still been exposed to Vietnamese, and compared them to a group of native English speakers in California. She found that the two groups of Vietnamese speakers perceived the tritone similarly, despite growing up in different places. They also significantly differed from the native Californian English group<sup>3</sup>.
+        <br>
+        <br>
+        Research by Stephanie Malek seeked to theorise a different model that could explain pitch circularity and the tritone paradox. She used the psychoacoustic idea of virtual pitch. This idea says that when we hear a complex tone that is composed of multiple frequencies, such as a Shepard tone, we extract the greatest common divisor between the multiple frequencies and perceive this ‘virtual pitch’.
+        <br>
+        <br>
+        For example if the frequencies 100 Hz, 200Hz, and 400Hz were played as complex tone, the greatest common divisor is 100Hz, and we would perceive the pitch at 100Hz. She couples the idea of virtual pitch with a probabilistic threshold model to account for the different perceptions that people have<sup>4</sup>.
+        <br>
+        <br>
+        Finally, a study by Shimizu et al investigated the neuronal response to Shepard tones using fMRI. They were particularly interested in the areas involved in maintaining the illusion of pitch circularity. They identified areas in the auditory cortex, temporal lobes and surprisingly in the occipital cortex (which is usually connected to vision). One of the unique aspects of the study was that the team developed a method of measuring activation over a long period of time in fMRI, which had been difficult beforehand<sup>5</sup>.   
+        <br>
+        <br>
+        <br>
+        <b>References</b>
+        <ol>
+            <li>Britannica Editors, 2010, https://www.britannica.com/art/octave-music, Encyclopaedia Britannica
+            </li>
+            <li>Deutsch, D., 1992, Paradoxes of musical pitch, Scientific American</li>
+            <li>Deutsch, D., Henthorn T. and Dolson, M., 2004, Speech patterns heard early in life influence later perception of the tritone paradox. Music Perception</li>
+            <li>Stephanie Malek, 2018, Pitch Class and Envelope Effects in the Tritone Paradox Are Mediated by Differently Pronounced Frequency Preference Regions, Frontiers in Psychology</li>
+            <li>5.	Shimizu et al, 2007, Neuronal response to Shepard's tones. An auditory fMRI study using multifractal analysis, Brain Research</li>
+        </ol>
+      </p>
     </div>
 
         <div class="poll">

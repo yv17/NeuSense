@@ -77,7 +77,7 @@
                 <br>
                 <br>
                 <figure>
-                    <img src="img/oct1.png">
+                    <img src="img/oct1-inverse.png">
                     <figcaption>Figure 1: The top two scores shows the pattern played to the left and right ears. The second set of scores demonstrated the most common perception.</figcaption>
                 </figure>
                 <br>
@@ -107,7 +107,7 @@
                 A1 is most likely responsible for detecting changes in pitch and this has been established in previous studies. 
                 <br>
                 <figure>
-                    <img src="img/oct2.png">
+                    <img src="img/oct2-inverse.png">
                     <figcaption>Figure 2: Depicts the auditory cortex.</figcaption>
                 </figure>
                 <br>
