@@ -67,6 +67,7 @@
             The second time, the melodies are in different pitch ranges. You should find it easier to distinguish two different sound sources, hence you can distinguish the two separate melodies. This idea is similar to the one proposed in the Galloping Rhythm. 
             <br>
             <br>
+            <br>
             <b>What is the research on interleaved melodies? </b>
             <br>
             A Canadian study looked at utilising functional MRI to look at the neural structures involved in processing the illusion. 
