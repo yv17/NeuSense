@@ -8,6 +8,7 @@
         $HBS = $_SESSION['HBS'];
         $TP = $_SESSION['TP'];
         $OMDHAF = $_SESSION['OMDHAF'];
+        $mmans = $_SESSION['mmans'];
     }
 ?>
 
@@ -53,16 +54,27 @@
             <p> 
             <b>What is it?</b>
             <br>
-            The mysterious melody illusion was first discovered in 1972 by Diana Deutsch. <sup>1</sup>
+            The mysterious melody illusion was first discovered in 1972 by Diana Deutsch<sup>1</sup>. 
             A familiar tune was modified so that the notes were randomly scattered between three different octaves. 
             This made the tune difficult to identify, however once told the name of the tune listeners could recognise it easily. 
             Listen to our recreation of the illusion here.
             <br>
             <br>
-                <audio controls>
+                <audio id='mm' preload="auto" controls>
                     <source src="sound_files/mysterious_melody.mp3" type="audio/mpeg">
                 </audio>
             <br>
+
+            <?php if($_SESSION['mmflag']==1){ ?>
+                <script>
+                    myAudio=document.getElementById('mm');
+                    myAudio.addEventListener('canplaythrough', function() {
+                    if(this.currentTime < 34){this.currentTime = 34;}
+                    //this.play();
+                    });
+                </script>
+            <?php } ?>
+
             <br>
             <br>
             <b>What does this tell us about human hearing?</b>
@@ -95,6 +107,7 @@
 
 
         <div class="poll">
+            <?php if($_SESSION['mmflag']==0){ ?>
                 <span>Can you identify the correct melody?</span><br>
                 <form action="mm.php" method="POST">
                     <input type="radio" name="mm" value="0" id="TTLS" required>
@@ -111,9 +124,12 @@
 
                     <input type="submit" value="Submit" class="submit">
                 </form>
+            <?php } ?>
 
                 <?php 
-                if($_SESSION['mmflag']==1){ echo "<br>Correct answer: The Entertainer";
+                if($_SESSION['mmflag']==1){ 
+                    echo "<br>Correct answer: The Entertainer<br><br>";
+                    echo "Your answer: " . $mmans . '<br>';
                 ?>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -131,7 +147,7 @@
                             ]);
 
                             var options = {
-                                'title': 'Results',
+                                //'title': 'Results',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
                                 'colors': ['#D52345', '#228CD5', '#23D5B3','#e8e227'],
                                 'width':350, 'height':300, 

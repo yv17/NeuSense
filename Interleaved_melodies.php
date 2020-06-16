@@ -7,6 +7,7 @@
         $im0 = $_SESSION['im0'];
         $im1 = $_SESSION['im1'];
         $im2 = $_SESSION['im2'];
+        $imans = $_SESSION['imans'];
     }
 ?>
 
@@ -55,9 +56,20 @@
             Firstly, two melodies are played simultaneously. Each subsequent note comes from the other melody (for example if there is melody A and melody B, the note order will go: A B A B A…). Afterwards, the two melodies are played simultaneously again but the pitch range of one of the melodies has been shifted. You might find it is much easier to identify the individual melodies the second time. 
             <br>
             <br>
-            <audio controls>
+            <audio id='im' preload="auto" controls>
                 <source src="sound_files/interleaved_melodies.mp3" type="audio/mpeg">
             </audio>
+
+            <?php if($_SESSION['imflag']==1){ ?>
+                <script>
+                    myAudio=document.getElementById('im');
+                    myAudio.addEventListener('canplaythrough', function() {
+                    if(this.currentTime < 31){this.currentTime = 31;}
+                    //this.play();
+                    });
+                </script>
+            <?php } ?>
+
             <br>
             <br>
             <br>
@@ -109,6 +121,7 @@
         </div>
 
         <div class="poll">
+                <?php if($_SESSION['imflag']==0){ ?>
                 <span>Can you identify the correct melodies?</span><br>
                 <form action="im.php" method="POST">
                     <input type="radio" name="im" value="0" id="im0" required>
@@ -122,9 +135,10 @@
 
                     <input type="submit" value="Submit" class="submit">
                 </form>
+                <?php } ?>    
 
                 <?php 
-                if($_SESSION['imflag']==1){ echo "<br>Correct answer:<br>Twinkle Twinkle Little Star & Yankee Doodle";
+                if($_SESSION['imflag']==1){ echo "<br>Correct answer:<br>Twinkle Twinkle Little Star & Yankee Doodle<br><br> Your answer:<br>" . $imans . '<br>';
                 ?>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -141,7 +155,7 @@
                             ]);
 
                             var options = {
-                                'title': 'Results',
+                                //'title': 'Results',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
                                 'colors': ['#23D5B3', '#D52345', '#228CD5'],
                                 'width':350, 'height':300, 

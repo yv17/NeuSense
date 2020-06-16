@@ -24,13 +24,14 @@
     $im2 = $details["count"];
 
     if($consent==0){
-        if($im==0) $im0++;
-        elseif($im==1) $im1++;
-        elseif($im==2) $im2++;
+        if($im==0) {$im0++; $ans='Twinkle Twinkle Little Star & Yankee Doodle';}
+        elseif($im==1) {$im1++; $ans='Twinkle Twinkle Little Star & Happy Birthday Song';}
+        elseif($im==2) {$im2++; $ans='Happy Birthday Song & Yankee Doodle';}
     }
 
     setIM($im0, $im1, $im2);
     $_SESSION['imflag'] = 1;
+    $_SESSION['imans'] = $ans;
 
     header('Location: Interleaved_melodies.php');
 

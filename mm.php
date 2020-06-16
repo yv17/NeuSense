@@ -26,14 +26,15 @@
     $OMDHAF = $details["count"];
 
     if($consent==0){
-        if($mm==0) $TTLS++;
-        elseif($mm==1) $HBS++;
-        elseif($mm==2) $TP++;
-        elseif($mm==3) $OMDHAF++;
+        if($mm==0) {$TTLS++; $ans='Twinkle Twinkle Little Star';}
+        elseif($mm==1) {$HBS++; $ans='Happy Birthday Song';}
+        elseif($mm==2) {$TP++; $ans='The Entertainer';}
+        elseif($mm==3) {$OMDHAF++; $ans='Old McDonald Had A Farm';}
     }
 
     setMM($TTLS, $HBS, $TP, $OMDHAF);
     $_SESSION['mmflag'] = 1;
+    $_SESSION['mmans'] = $ans;
 
     header('Location: Mysterious_melody.php');
 
