@@ -1,55 +1,55 @@
 <?php
+    include 'db.php';
+    
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
     $mm = $_POST["mm"];
 
-    $db = pg_connect("host=localhost port=5432 dbname=neusense user=neusenseuser password=password");
-
-    $query = "UPDATE pollresult SET mm={$mm} WHERE id=$id";
-    $result = pg_query($query);
-
-    $result = countEachOI(0);
-    while($row = pg_fetch_array($result)){
-        $TTLS = $row["count"];
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET mm={$mm} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
-    $result = countEachOI(1);
-    while($row = pg_fetch_array($result)){
-        $HBS = $row["count"];
+    // Fetching poll results
+    $details = countEachMM(0,$pdo);
+    $TTLS = $details["count"];
+    $details = countEachMM(1,$pdo);
+    $HBS = $details["count"];
+    $details = countEachMM(2,$pdo);
+    $TP = $details["count"];
+    $details = countEachMM(3,$pdo);
+    $OMDHAF = $details["count"];
+
+    if($consent==0){
+        if($mm==0) {$TTLS++; $ans='Twinkle Twinkle Little Star';}
+        elseif($mm==1) {$HBS++; $ans='Happy Birthday Song';}
+        elseif($mm==2) {$TP++; $ans='The Entertainer';}
+        elseif($mm==3) {$OMDHAF++; $ans='Old McDonald Had A Farm';}
     }
 
-    $result = countEachOI(2);
-    while($row = pg_fetch_array($result)){
-        $TP = $row["count"];
-    }
-
-    $result = countEachOI(3);
-    while($row = pg_fetch_array($result)){
-        $OMDHAF = $row["count"];
-    }
-
-    setOI($TTLS, $HBS, $TP, $OMDHAF);
+    setMM($TTLS, $HBS, $TP, $OMDHAF);
     $_SESSION['mmflag'] = 1;
-    printOI();
+    $_SESSION['mmans'] = $ans;
 
     header('Location: Mysterious_melody.php');
 
-    function countEachOI($which){
+    function countEachMM($which,$pdo){
         $query = "SELECT COUNT(mm) FROM pollresult WHERE mm={$which}";
-        $result = pg_query($query);
-        return $result;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $details;
     }
 
-    function setOI($TTLS, $HBS, $TP, $OMDHAF){
+    function setMM($TTLS, $HBS, $TP, $OMDHAF){
         $_SESSION['TTLS'] = $TTLS;
         $_SESSION['HBS'] = $HBS;
         $_SESSION['TP'] = $TP;
         $_SESSION['OMDHAF'] = $OMDHAF;
-    }
-
-    function printOI(){
-        echo 'Left: ' . $_SESSION['left'] . '<br>' . 
-        'Right: ' . $_SESSION['right'] . '<br>' .
-        'Unclear: ' . $_SESSION['unclear'];
     }
 ?>

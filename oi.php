@@ -1,35 +1,37 @@
 <?php
+    include 'db.php';
+
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
     $oi = $_POST["oi"];
 
-    echo 'ID: ' . $id . '<br>';
-
-    $db = pg_connect("host=localhost port=5432 dbname=neusense user=neusenseuser password=password");
-
-    // Insert poll response into database
-    $query = "UPDATE pollresult SET oi={$oi} WHERE id=$id";
-    $result = pg_query($query);
-
-    // Fetching number of each response
-    $result = countEachOI(0);
-    while($row = pg_fetch_array($result)){
-        $left = $row["count"];
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET oi={$oi} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
-    $result = countEachOI(1);
-    while($row = pg_fetch_array($result)){
-        $right = $row["count"];
-    }
+    // Fetching poll results
+    $details = countEachOI(0,$pdo);
+    $left = $details["count"];
+    $details = countEachOI(1,$pdo);
+    $right = $details["count"];
+    $details = countEachOI(2,$pdo);
+    $unclear = $details["count"];
 
-    $result = countEachOI(2);
-    while($row = pg_fetch_array($result)){
-        $unclear = $row["count"];
+    if($consent==0){
+        if($oi==0) $left++;
+        elseif($oi==1) $right++;
+        elseif($oi==2) $unclear++;
     }
 
     // Setting session variables to be accessed on respective illusion page
     setOI($left, $right, $unclear);
-
+ 
     // Fetching number of responses linked to user survey
     $oires = array();
 
@@ -60,14 +62,16 @@
                 WHERE pollresult.oi={$i}
                 AND surveyresult.$category={$k}";
 
-                $res = pg_query($query);
-                while($row = pg_fetch_array($res)){
-                    $count = $row["count"];
-                }
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $details = $stmt->fetch(PDO::FETCH_ASSOC);
+                $count = $details["count"];
+
                 $oires[$i][$j][$k] = $oires[$i][$j][$k] + $count;
             }
         }
     }
+
 
     // To obtain percentage, each element divide by total of category
     // Obtain normalising factors
@@ -82,18 +86,15 @@
         ON surveyresult.id = pollresult.id
         WHERE age={$i}
         AND pollresult.oi IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $ageN = $row["count"];
-        }
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $ageN = $details["count"];
+
         $agesN[$i] = $ageN;
     }
-    /*
-    for($i=0; $i<5; $i++){
-        echo 'Age'.$i.': '.$agesN[$i];
-        echo '<br>';
-    }
-    */
+    
 
     // Obtain frequency of response for handedness
     // Indexed by left, right, ambidextrous
@@ -105,10 +106,12 @@
         ON surveyresult.id = pollresult.id
         WHERE handedness={$i}
         AND pollresult.oi IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $handN = $row["count"];
-        }
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $handN = $details["count"];
+
         $handsN[$i] = $handN;
     }
 
@@ -123,12 +126,15 @@
         ON surveyresult.id = pollresult.id
         WHERE training={$i}
         AND pollresult.oi IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $trainingN = $row["count"];
-        }
-        $trainingsN[$i] = $trainingN;
-        $totalN = $totalN + $trainingN;
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $trainN = $details["count"];
+
+        $trainingsN[$i] = $trainN;
+
+        $totalN = $totalN + $trainN;
     }
 
     // Normalising to percentage
@@ -205,7 +211,7 @@
     $text[0] = array('who are under 18','who are between 18 and 25','who are between 25 and 40','who are between 40 and 60','who are above 60');
     $text[1] = array('who are left handed', 'who are right handed', 'who are ambidextrous');
     $text[2] = array('with no music training', 'with some music training', 'with formal music training');
-    $textresp = array('heard it in the left ear', 'heard it in the right ear', 'found it unclear');
+    $textresp = array('heard the high tones in the left ear', 'heard the high tones in the right ear', 'found it unclear');
 
     if($count>0){
         $_SESSION['oitextflag'] = 1;
@@ -235,10 +241,12 @@
     // Return to illusion page
     header('Location: Octave_illusion.php');
 
-    function countEachOI($which){
+    function countEachOI($which,$pdo){
         $query = "SELECT COUNT(oi) FROM pollresult WHERE oi={$which}";
-        $result = pg_query($query);
-        return $result;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $details;
     }
 
     function setOI($left, $right, $unclear){

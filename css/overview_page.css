@@ -255,7 +255,6 @@ hr{
     display: flex;
     /*border: 1px solid rgb(242,242,242);*/ 
     padding-top: 1.17vw;
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;

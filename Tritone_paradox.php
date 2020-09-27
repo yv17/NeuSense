@@ -19,9 +19,20 @@
 ?>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179123438-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179123438-2');
+</script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/tri_icon.png" type="image/png">
     <title>Tritone Paradox</title>
 </head>
@@ -34,7 +45,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Shepard_tone.html">Shepard's Tone</a>
+                <a href="Shepard_tone.html">Shepard's Tones</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -42,6 +53,8 @@
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Timing_seq.html">Timing and Sequence Perception</a>
+                <a href="Galloping.html">Galloping Rhythm</a>
                 <a href="Interleaved_melodies.php">Interleaved Melodies</a>
                 <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
@@ -54,6 +67,7 @@
     <hr>
     <div class="gridcontainer">
         <div class="textbox">
+        <p>
         <b>What is the tritone paradox? </b>
         <br>
         <br>
@@ -120,6 +134,7 @@
             <li>Stephanie Malek, 2018, Pitch Class and Envelope Effects in the Tritone Paradox Are Mediated by Differently Pronounced Frequency Preference Regions, Frontiers in Psychology</li>
             <li>5.	Shimizu et al, 2007, Neuronal response to Shepard's tones. An auditory fMRI study using multifractal analysis, Brain Research</li>
         </ol>
+      </p>
     </div>
 
         <div class="poll">

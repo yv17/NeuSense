@@ -7,10 +7,21 @@
         $im0 = $_SESSION['im0'];
         $im1 = $_SESSION['im1'];
         $im2 = $_SESSION['im2'];
+        $imans = $_SESSION['imans'];
     }
 ?>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179123438-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179123438-2');
+</script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -27,7 +38,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Shepard_tone.html">Shepard's Tone</a>
+                <a href="Shepard_tone.html">Shepard's Tones</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -35,6 +46,8 @@
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Timing_seq.html">Timing and Sequence Perception</a>
+                <a href="Galloping.html">Galloping Rhythm</a>
                 <a href="Interleaved_melodies.php">Interleaved Melodies</a>
                 <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
@@ -53,9 +66,20 @@
             Firstly, two melodies are played simultaneously. Each subsequent note comes from the other melody (for example if there is melody A and melody B, the note order will go: A B A B A…). Afterwards, the two melodies are played simultaneously again but the pitch range of one of the melodies has been shifted. You might find it is much easier to identify the individual melodies the second time. 
             <br>
             <br>
-            <audio controls>
-                <source src="sound_files/interleaved_melodies.m4a" type="audio/mpeg">
+            <audio id='im' preload="auto" controls>
+                <source src="sound_files/interleaved_melodies.mp3" type="audio/mpeg">
             </audio>
+
+            <?php if($_SESSION['imflag']==1){ ?>
+                <script>
+                    myAudio=document.getElementById('im');
+                    myAudio.addEventListener('canplaythrough', function() {
+                    if(this.currentTime < 31){this.currentTime = 31;}
+                    //this.play();
+                    });
+                </script>
+            <?php } ?>
+
             <br>
             <br>
             <br>
@@ -63,6 +87,7 @@
             <br>
             The illusion is a good demonstration of how we group notes together using pitch cues. When there are competing sources of sound, we assume that notes of a similar pitch are coming from the same source. When you listen to the interleaved melodies the first time they are in the same pitch range; you find it hard to look for seperate pitch cues and assume the notes are from the same source. Consequently, you find it hard to distinguish separate melodies. 
             The second time, the melodies are in different pitch ranges. You should find it easier to distinguish two different sound sources, hence you can distinguish the two separate melodies. This idea is similar to the one proposed in the Galloping Rhythm. 
+            <br>
             <br>
             <br>
             <b>What is the research on interleaved melodies? </b>
@@ -106,6 +131,7 @@
         </div>
 
         <div class="poll">
+                <?php if($_SESSION['imflag']==0){ ?>
                 <span>Can you identify the correct melodies?</span><br>
                 <form action="im.php" method="POST">
                     <input type="radio" name="im" value="0" id="im0" required>
@@ -119,8 +145,11 @@
 
                     <input type="submit" value="Submit" class="submit">
                 </form>
+                <?php } ?>    
 
-                <?php if($_SESSION['imflag']==1){ ?>
+                <?php 
+                if($_SESSION['imflag']==1){ echo "<br>Correct answer:<br>Twinkle Twinkle Little Star & Yankee Doodle<br><br> Your answer:<br>" . $imans . '<br>';
+                ?>
                     <div id="piechart"></div>
                     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
@@ -136,9 +165,9 @@
                             ]);
 
                             var options = {
-                                'title': 'Results',
+                                //'title': 'Results',
                                 'titleTextStyle': {color:'#f2f2f2',fontSize:17, fontName:'Lato'},
-                                'colors': ['#D52345', '#23D5B3', '#228CD5','#e8e227'],
+                                'colors': ['#23D5B3', '#D52345', '#228CD5'],
                                 'width':350, 'height':300, 
                                 'pieHole':0.4,
                                 'pieSliceText':'none',

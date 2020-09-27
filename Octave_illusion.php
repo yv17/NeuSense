@@ -14,9 +14,20 @@
 ?>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179123438-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-179123438-2');
+</script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet" href="css/illusions_des.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/oct_icon.png" type="image/png">
     <title>Octave Illusion</title>
 </head>
@@ -29,7 +40,7 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="Shepard_tone.html">Shepard's Tone</a>
+                <a href="Shepard_tone.html">Shepard's Tones</a>
                 <a href="Octave_illusion.php">Octave Illusion</a>
                 <a href="Scale_illusion.html">Scale Illusion</a>
                 <a href="Mysterious_melody.php">Mysterious Melody</a>
@@ -37,6 +48,8 @@
                 <a href="Timbre_illusion.html">Timbre Illusion</a>
                 <a href="DPOAE.html">DPOAE</a>
                 <a href="Continuity_illusion.html">Continuity Illusion</a>
+                <a href="Timing_seq.html">Timing and Sequence Perception</a>
+                <a href="Galloping.html">Galloping Rhythm</a>
                 <a href="Interleaved_melodies.php">Interleaved Melodies</a>
                 <a href="Binaural_beats.html">Binaural Beats</a>
             </div>
@@ -52,7 +65,6 @@
             <p>
                 <b>What is it?</b>
                 <br>
-                <br>
                 In this illusion, you will hear a sequence of alternating tones in each ear. 
                 <br>
                 <br>
@@ -63,7 +75,6 @@
                 <br>
                 <br>
                 <b>How does it work? </b>
-                <br>
                 <br>
                 It is likely that what you heard is different from the actual sound pattern.
                 Most often, people hear a repeating high tone in one ear and a repeating low tone in the other. 
@@ -84,13 +95,11 @@
                 <br>
                 <b>Is this used anywhere?</b>
                 <br>
-                <br>
                 The octave illusion gave rise to further studies on the ‘what’ and ‘where’ pathways. Functional MRI studies have sought to determine the specific location of these pathways and subsequently, better understand neural sound processing. 
                 <br>
                 <br>
                 <br>
                 <b>What is in the detailed research? </b>
-                <br>
                 <br>
                 A 2018 study in Tokyo looked at identifying structures in the brain that are responsible for the illusory perception of the octave illusion. 
                 <br>
@@ -134,7 +143,6 @@
                 <br>
                 <br>
                 <b>References</b>
-                <br>
                 <ol>
                     <li> Diana Deutsch, 1983, The Octave Illusion in relation to handedness and familial handedness background, Neuropsychologia</li>
                     <li>D Deutsch. P Roll., 1976, Separate “What” and “Where” Decision Mechanisms In Processing a Dichotic Tonal Sequence, Journal of Experimental Psychology: Human Perception and Performance</li>

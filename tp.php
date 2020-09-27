@@ -1,5 +1,10 @@
 <?php
+    include 'db.php';
+
+    echo 'Unexpected input <br><br>';
+
     session_start();
+    $consent = $_SESSION['consent'];
     $id = $_SESSION['id'];
 
     $tp1 = $_POST["tp1"];
@@ -7,47 +12,39 @@
     $tp3 = $_POST["tp3"];
     $tp4 = $_POST["tp4"];
 
-    $db = pg_connect("host=localhost port=5432 dbname=neusense user=neusenseuser password=password");
-
-    //Insert to db
-    $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3}, tp4={$tp4} WHERE id=$id";
-    $result = pg_query($query);
-
-
-    $result = countEachTP('tp1',0);
-    while($row = pg_fetch_array($result)){
-        $atp1 = $row["count"];
-    }
-    $result = countEachTP('tp1',1);
-    while($row = pg_fetch_array($result)){
-        $dtp1 = $row["count"];
+    if($consent!=0){
+        // Insert poll response into database
+        $query = "UPDATE pollresult SET tp1={$tp1}, tp2={$tp2}, tp3={$tp3}, tp4={$tp4} WHERE id=$id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
-    $result = countEachTP('tp2',2);
-    while($row = pg_fetch_array($result)){
-        $atp2 = $row["count"];
-    }
-    $result = countEachTP('tp2',3);
-    while($row = pg_fetch_array($result)){
-        $dtp2 = $row["count"];
-    }
+    // Fetching poll results
+    $details = countEachTP('tp1',0,$pdo);
+    $atp1 = $details["count"];
+    $details = countEachTP('tp1',1,$pdo);
+    $dtp1 = $details["count"];
 
-    $result = countEachTP('tp3',4);
-    while($row = pg_fetch_array($result)){
-        $atp3 = $row["count"];
-    }
-    $result = countEachTP('tp3',5);
-    while($row = pg_fetch_array($result)){
-        $dtp3 = $row["count"];
-    }
+    $details = countEachTP('tp2',2,$pdo);
+    $atp2 = $details["count"];
+    $details = countEachTP('tp2',3,$pdo);
+    $dtp2 = $details["count"];
 
-    $result = countEachTP('tp4',6);
-    while($row = pg_fetch_array($result)){
-        $atp4 = $row["count"];
-    }
-    $result = countEachTP('tp4',7);
-    while($row = pg_fetch_array($result)){
-        $dtp4 = $row["count"];
+    $details = countEachTP('tp3',4,$pdo);
+    $atp3 = $details["count"];
+    $details = countEachTP('tp3',5,$pdo);
+    $dtp3 = $details["count"];
+
+    $details = countEachTP('tp4',6,$pdo);
+    $atp4 = $details["count"];
+    $details = countEachTP('tp4',7,$pdo);
+    $dtp4 = $details["count"];
+
+    if($consent==0){
+        if($tp1==0) $atp1++; elseif($tp1==1) $dtp1++;
+        if($tp2==2) $atp2++; elseif($tp2==3) $dtp2++;
+        if($tp3==4) $atp3++; elseif($tp3==5) $dtp3++;
+        if($tp4==6) $atp4++; elseif($tp4==7) $dtp4++;
     }
 
     setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3, $atp4, $dtp4);
@@ -96,10 +93,11 @@
                 WHERE pollresult.$col={$i}
                 AND surveyresult.$category={$k}";
 
-                $res = pg_query($query);
-                while($row = pg_fetch_array($res)){
-                    $count = $row["count"];
-                }
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $details = $stmt->fetch(PDO::FETCH_ASSOC);
+                $count = $details["count"];
+
                 $tpres[$i][$j][$k] = $tpres[$i][$j][$k] + $count;
             }
         }
@@ -118,10 +116,12 @@
         ON surveyresult.id = pollresult.id
         WHERE age={$i}
         AND pollresult.tp1 IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $ageN = $row["count"];
-        }
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $ageN = $details["count"];
+
         $agesN[$i] = $ageN;
     }
 
@@ -135,10 +135,12 @@
         ON surveyresult.id = pollresult.id
         WHERE handedness={$i}
         AND pollresult.tp1 IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $handN = $row["count"];
-        }
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $handN = $details["count"];
+
         $handsN[$i] = $handN;
     }
 
@@ -153,12 +155,15 @@
         ON surveyresult.id = pollresult.id
         WHERE training={$i}
         AND pollresult.tp1 IS NOT NULL";
-        $result = pg_query($query);
-        while($row = pg_fetch_array($result)){
-            $trainingN = $row["count"];
-        }
-        $trainingsN[$i] = $trainingN;
-        $totalN = $totalN + $trainingN;
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        $trainN = $details["count"];
+
+        $trainingsN[$i] = $trainN;
+
+        $totalN = $totalN + $trainN;
     }
 
     // Normalising to percentage
@@ -275,10 +280,12 @@
     //Go to tp page
     header('Location: Tritone_paradox.php');
 
-    function countEachTP($tp, $which){
+    function countEachTP($tp,$which,$pdo){
         $query = "SELECT COUNT({$tp}) FROM pollresult WHERE $tp={$which}";
-        $result = pg_query($query);
-        return $result;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $details = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $details;
     }
 
     function setTP($atp1, $dtp1, $atp2, $dtp2, $atp3, $dtp3, $atp4, $dtp4){
